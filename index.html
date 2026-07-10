@@ -311,7 +311,19 @@
     #lightbox { position: fixed; inset: 0; background: rgba(9,13,22,0.95); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 40px; backdrop-filter: blur(10px); }
     .lightbox-close { position: absolute; top: 30px; right: 40px; font-size: 36px; color: white; cursor: pointer; }
 
-    /* Print System */
+    /* Custom styles for grid layout balance */
+    .renewable-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px; }
+    .renewable-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); position: relative; }
+    .renewable-card-content { padding: 24px; }
+    .renewable-card-title { font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .renewable-card-desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.5; }
+
+    .transit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .transit-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+    .transit-card-content { padding: 24px; }
+    .transit-card-title { font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 12px; }
+    .transit-card-desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.5; }
+
     @media print {
       body * { display: none !important; }
       #certModal, #certModal * { display: block !important; }
@@ -330,6 +342,8 @@
       .hero-visual { display: none; }
       .dash-card { grid-column: span 12; }
       .calc-container { grid-template-columns: 1fr; }
+      .renewable-grid { grid-template-columns: 1fr; }
+      .transit-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .navbar { padding: 0 20px; }
@@ -464,40 +478,61 @@
 <section class="section-pad" id="energy">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-kicker">Energy Architecture</div>
-      <h2 class="section-title">Infinite Power Vectors</h2>
-      <p class="section-desc">Harvesting power across deep spatial nodes to generate hyper-abundant, reliable green energy for our industrial grids.</p>
+      <div class="section-kicker">Energy Architecture Matrix</div>
+      <h2 class="section-title">Offshore Wind Field Matrix Grid</h2>
     </div>
 
-    <div class="grid-3">
-      <div class="glass-card reveal" style="padding: 24px;">
-        <span style="font-size: 32px; display: block; margin-bottom: 16px;">☀️</span>
-        <h3 class="title-font" style="font-size: 18px; color: var(--forest); margin-bottom: 8px;">Perovskite Solar Arrays</h3>
-        <p style="font-size: 14px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Ultra-high efficiency multi-junction photovoltaic infrastructure covering dry fields and floating canals across India.</p>
-        <div class="prog-container">
-          <div class="prog-bar-label"><span>National Generation Load</span><span>78%</span></div>
-          <div class="prog-bar-track"><div class="prog-bar-fill" style="width: 78%;"></div></div>
+    <div class="renewable-grid">
+      <div class="renewable-card reveal">
+        <div style="position: relative; width: 100%; height: 220px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Decentralized Floating Photovoltaic Reservoirs" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.4) 70%, transparent 100%);"></div>
+          <div style="position: absolute; bottom: 20px; left: 24px; right: 24px; color: white;">
+            <h3 class="title-font" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Decentralized Floating Photovoltaic Reservoirs</h3>
+            <p style="font-size: 12px; opacity: 0.85; line-height: 1.4;">Mitigating open-water body evaporation losses while maintaining highly optimized operating cell thermal conditions.</p>
+          </div>
         </div>
       </div>
 
-      <div class="glass-card reveal" style="padding: 24px;">
-        <span style="font-size: 32px; display: block; margin-bottom: 16px;">💧</span>
-        <h3 class="title-font" style="font-size: 18px; color: var(--forest); margin-bottom: 8px;">Green Hydrogen Complexes</h3>
-        <p style="font-size: 14px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Using advanced solid-oxide water electrolyzers powered by off-peak wind assets to substitute chemical feedstocks.</p>
-        <div class="prog-container">
-          <div class="prog-bar-label"><span>Heavy Industrial Swap</span><span>62%</span></div>
-          <div class="prog-bar-track"><div class="prog-bar-fill" style="width: 62%;"></div></div>
+      <div class="renewable-card reveal">
+        <div style="background: linear-gradient(135deg, #115e59, #064e3b); width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; position: relative;">
+          <span style="font-size: 50px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">💨</span>
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.1) 70%, transparent 100%);"></div>
+          <div style="position: absolute; bottom: 20px; left: 24px; right: 24px; color: white;">
+            <h3 class="title-font" style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Offshore Mega-Turbine Generation Systems</h3>
+            <p style="font-size: 12px; opacity: 0.85; line-height: 1.4;">Harnessing continuous oceanic thermal drafts to feed high-velocity alternating current loads straight into core coastal distribution nodes.</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="glass-card reveal" style="padding: 24px;">
-        <span style="font-size: 32px; display: block; margin-bottom: 16px;">🍃</span>
-        <h3 class="title-font" style="font-size: 18px; color: var(--forest); margin-bottom: 8px;">Deep Offshore Airborne Wind</h3>
-        <p style="font-size: 14px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">High-altitude tethered airfoils intercepting continuous jet-streams over India's expansive maritime boundaries.</p>
-        <div class="prog-container">
-          <div class="prog-bar-label"><span>Baseload Contribution</span><span>45%</span></div>
-          <div class="prog-bar-track"><div class="prog-bar-fill" style="width: 45%;"></div></div>
-        </div>
+    <div class="grid-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+      <div class="glass-card reveal" style="padding: 24px; border-radius: var(--radius-md);">
+        <span style="font-size: 24px; display: block; margin-bottom: 12px;">☀️</span>
+        <h4 class="title-font" style="font-size: 14px; color: var(--forest); margin-bottom: 8px;">Solar Infrastructure</h4>
+        <p style="font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Utilizing micro-tracked bifacial modules that absorb direct sunlight on the front face and secondary ground bounce radiation on the back face.</p>
+        <span class="mono" style="font-size: 10px; font-weight: 700; color: var(--green); text-transform: uppercase;">INITIATIVE: National Solar Mission</span>
+      </div>
+
+      <div class="glass-card reveal" style="padding: 24px; border-radius: var(--radius-md);">
+        <span style="font-size: 24px; display: block; margin-bottom: 12px;">🚙</span>
+        <h4 class="title-font" style="font-size: 14px; color: var(--forest); margin-bottom: 8px;">Wind Harvesting Fields</h4>
+        <p style="font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Deploying direct-drive permanent magnet generators that operate efficiently even inside low-velocity wind zones across inland terrain environments.</p>
+        <span class="mono" style="font-size: 10px; font-weight: 700; color: var(--green); text-transform: uppercase;">UTILITY: Basal Marine Power Delivery</span>
+      </div>
+
+      <div class="glass-card reveal" style="padding: 24px; border-radius: var(--radius-md);">
+        <span style="font-size: 24px; display: block; margin-bottom: 12px;">💧</span>
+        <h4 class="title-font" style="font-size: 14px; color: var(--forest); margin-bottom: 8px;">Hydropower Systems</h4>
+        <p style="font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Run-of-the-river turbines built to capitalize on high mountain stream velocities without creating large backwater storage pool situations.</p>
+        <span class="mono" style="font-size: 10px; font-weight: 700; color: var(--green); text-transform: uppercase;">CAPACITY: Peak Mountain Discharge Unification</span>
+      </div>
+
+      <div class="glass-card reveal" style="padding: 24px; border-radius: var(--radius-md);">
+        <span style="font-size: 24px; display: block; margin-bottom: 12px;">🌱</span>
+        <h4 class="title-font" style="font-size: 14px; color: var(--forest); margin-bottom: 8px;">Bioenergy Conversion</h4>
+        <p style="font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 16px;">Biochemical digester complexes converting agricultural residual crop waste directly into highly purified compressed bio-gas compounds.</p>
+        <span class="mono" style="font-size: 10px; font-weight: 700; color: var(--green); text-transform: uppercase;">STRATEGY: SATAT Organic Reuse Integration</span>
       </div>
     </div>
   </div>
@@ -505,55 +540,34 @@
 
 <section class="section-pad" id="transport" style="background: var(--bg-surface);">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-kicker">Transit Networks</div>
-      <h2 class="section-title">Hyperconnected Logistic Ribbons</h2>
-      <p class="section-desc">Eradicating urban congestive friction and long-haul shipping emissions through solid-state kinetic networks.</p>
-    </div>
-
-    <div class="grid-2">
-      <div class="reveal">
-        <h3 class="title-font" style="font-size: 24px; color: var(--forest); margin-bottom: 16px;">Strategic Expansion Roadmap</h3>
-        <p style="font-size: 14.5px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 24px;">India's transportation infrastructure operates inside structural closed-loop systems powered purely by induction energy grids.</p>
-        
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2030</div>
-            <div class="timeline-title">Intra-City Freight Automation</div>
-            <div class="timeline-desc">Subterranean automated capsule pipelines eliminate cargo vehicles from standard urban commuter routes.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2038</div>
-            <div class="timeline-title">National Induction Superhighways</div>
-            <div class="timeline-desc">Continuous resonant wireless energy transceivers built directly into highways keep freight fleets charged dynamically.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">2047</div>
-            <div class="timeline-title">Bharat Hyperloop Grid Completion</div>
-            <div class="timeline-desc">Vacuum tubes link primary industrial centers with transit velocities approaching 1,100 km/h.</div>
-          </div>
+    <div class="transit-grid">
+      <div class="transit-card reveal">
+        <div style="width: 100%; height: 200px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Modular Electric Mobility" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="transit-card-content">
+          <h3 class="transit-card-title title-font">Modular Electric Mobility (EV)</h3>
+          <p class="transit-card-desc">Scaling safe lithium iron phosphate chemistry batteries across public lines, backed by decentralized fast-charging ring loops.</p>
         </div>
       </div>
 
-      <div class="glass-card reveal" style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
-        <h3 class="title-font" style="font-size: 22px; color: var(--forest); margin-bottom: 20px;">Efficiency Metrics Matrix</h3>
-        <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 24px;">Operational energy allocation compared to past fossil benchmarks:</p>
-        
-        <div class="pie-wrapper">
-          <svg class="pie-svg" viewBox="0 0 64 64">
-            <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--green)" stroke-dasharray="55 100" />
-            <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--sky)" stroke-dasharray="30 100" stroke-dashoffset="-55" />
-            <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--lime)" stroke-dasharray="15 100" stroke-dashoffset="-85" />
-          </svg>
-          
-          <div class="pie-legend">
-            <div class="legend-item"><span class="legend-color" style="background: var(--green);"></span><span>High-Speed Rail (55%)</span></div>
-            <div class="legend-item"><span class="legend-color" style="background: var(--sky);"></span><span>Urban EV Networks (30%)</span></div>
-            <div class="legend-item"><span class="legend-color" style="background: var(--lime);"></span><span>Hyperloop Links (15%)</span></div>
-          </div>
+      <div class="transit-card reveal">
+        <div style="width: 100%; height: 200px; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="High-Capacity Transit Links" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="transit-card-content">
+          <h3 class="transit-card-title title-font">High-Capacity Transit Links</h3>
+          <p class="transit-card-desc">Expanding light-rail automated electric subway channels seamlessly interconnected to localized multi-passenger heavy e-buses.</p>
+        </div>
+      </div>
+
+      <div class="transit-card reveal">
+        <div style="background: linear-gradient(135deg, #0284c7, #0f172a); width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; border-top-left-radius: inherit; border-top-right-radius: inherit;">
+          <span style="font-size: 50px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">⚗️</span>
+        </div>
+        <div class="transit-card-content">
+          <h3 class="transit-card-title title-font">Hydrogen Fuel Cell Freight</h3>
+          <p class="transit-card-desc">Deploying chemical proton-exchange membranes for high-tonnage multi-axle freight lines, emitting only water vapor output.</p>
         </div>
       </div>
     </div>
