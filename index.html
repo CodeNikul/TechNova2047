@@ -1,212 +1,131 @@
 <!DOCTYPE html>
+
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viksit Bharat 2047 — TechNova Green Infrastructure Hub</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* ==========================================================================
-       CORE VARIABLES & THEMES (Tesla / Apple / Premium Gov Aesthetics)
-       ========================================================================== */
-    :root {
-      --forest: #0B3D24;
-      --forest-soft: #125332;
-      --green: #16A34A;
-      --green-light: #22C55E;
-      --lime: #A3E635;
-      --sky: #0EA5E9;
-      --bg-base: #FFFFFF;
-      --bg-surface: #F8FAFC;
-      --bg-card: rgba(255, 255, 255, 0.75);
-      --ink: #0F172A;
-      --ink-muted: #475569;
-      --line: rgba(15, 23, 42, 0.08);
-      --shadow: 0 20px 40px -15px rgba(11, 61, 36, 0.08);
-      --radius-lg: 24px;
-      --radius-md: 14px;
-      --glass-blur: 16px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viksit Bharat 2047 — TechNova Green Infrastructure Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================================
+     CORE VARIABLES & THEMES (Tesla / Apple / Premium Gov Aesthetics)
+     ========================================================================== */
+  :root {
+    --forest: #0B3D24;
+    --forest-soft: #125332;
+    --green: #16A34A;
+    --green-light: #22C55E;
+    --lime: #A3E635;
+    --sky: #0EA5E9;
+    --bg-base: #FFFFFF;
+    --bg-surface: #F8FAFC;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --ink: #0F172A;
+    --ink-muted: #475569;
+    --line: rgba(15, 23, 42, 0.08);
+    --shadow: 0 20px 40px -15px rgba(11, 61, 36, 0.08);
+    --radius-lg: 24px;
+    --radius-md: 14px;
+    --glass-blur: 16px;
+  }
 
-    [data-theme="dark"] {
-      --forest: #14532D;
-      --forest-soft: #166534;
-      --green: #22C55E;
-      --green-light: #4ADE80;
-      --lime: #CCFBF1;
-      --sky: #38BDF8;
-      --bg-base: #090D16;
-      --bg-surface: #0F172A;
-      --bg-card: rgba(15, 23, 42, 0.65);
-      --ink: #F8FAFC;
-      --ink-muted: #94A3B8;
-      --line: rgba(248, 254, 252, 0.12);
-      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
+[data-theme="dark"] {--forest: #14532D;--forest-soft: #166534;--green: #22C55E;--green-light: #4ADE80;--lime: #CCFBF1;--sky: #38BDF8;--bg-base: #090D16;--bg-surface: #0F172A;--bg-card: rgba(15, 23, 42, 0.65);--ink: #F8FAFC;--ink-muted: #94A3B8;--line: rgba(248, 254, 252, 0.12);--shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);}
 
-    /* Reset & Structural Baselines */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-base);
-      color: var(--ink);
-      overflow-x: hidden;
-      transition: background-color 0.5s ease, color 0.5s ease;
-    }
+/* Reset & Structural Baselines */
 
-    h1, h2, h3, h4, .title-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    
-    /* Placeholder graphic styling if needed */
-    .vector-fallback {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--forest-soft), var(--bg-surface));
-      width: 100%;
-      height: 100%;
-    }
+{ box-sizing: border-box; margin: 0; padding: 0; }html { scroll-behavior: smooth; overflow-x: hidden; }body {font-family: 'Inter', sans-serif;background-color: var(--bg-base);color: var(--ink);overflow-x: hidden;transition: background-color 0.5s ease, color 0.5s ease;}
 
-    /* Utility Scrollbar */
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: var(--bg-surface); }
-    ::-webkit-scrollbar-thumb { background: var(--forest-soft); border-radius: 10px; }
+h1, h2, h3, h4, .title-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }.mono { font-family: 'JetBrains Mono', monospace; }a { text-decoration: none; color: inherit; }ul { list-style: none; }img { max-width: 100%; display: block; object-fit: cover; }
 
-    /* Global Scroll Progress Indicator */
-    #scroll-progress {
-      position: fixed; top: 0; left: 0; height: 4px; 
-      background: linear-gradient(90deg, var(--green), var(--lime), var(--sky));
-      z-index: 2000; width: 0%; transition: width 0.1s linear;
-    }
+/* Utility Scrollbar */::-webkit-scrollbar { width: 10px; }::-webkit-scrollbar-track { background: var(--bg-surface); }::-webkit-scrollbar-thumb { background: var(--forest-soft); border-radius: 10px; }
 
-    /* Custom Animated Custom Cursor */
-    #custom-cursor {
-      width: 20px; height: 20px; border: 2px solid var(--green); border-radius: 50%;
-      position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
-      transition: transform 0.1s ease, background-color 0.2s ease;
-    }
+/* Global Scroll Progress Indicator */#scroll-progress {position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--green), var(--lime), var(--sky));z-index: 2000; width: 0%; transition: width 0.1s linear;}
 
-    /* Loading Screen Overlay */
-    #loader-screen {
-      position: fixed; inset: 0; background: var(--bg-base); z-index: 99999;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .spinner {
-      width: 60px; height: 60px; border: 4px solid var(--line); border-top-color: var(--green);
-      border-radius: 50%; animation: spin 1s infinite linear;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
+/* Custom Animated Custom Cursor */#custom-cursor {width: 20px; height: 20px; border: 2px solid var(--green); border-radius: 50%;position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;transition: transform 0.1s ease, background-color 0.2s ease;}
 
-    /* Glassmorphism Architecture */
-    .glass-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(22, 163, 74, 0.3);
-      box-shadow: 0 30px 60px -15px rgba(11, 61, 36, 0.15);
-    }
+/* Loading Screen Overlay */#loader-screen {position: fixed; inset: 0; background: var(--bg-base); z-index: 99999;display: flex; flex-direction: column; align-items: center; justify-content: center;transition: opacity 0.6s ease, transform 0.6s ease;}.spinner {width: 60px; height: 60px; border: 4px solid var(--line); border-top-color: var(--green);border-radius: 50%; animation: spin 1s infinite linear;}@keyframes spin { 100% { transform: rotate(360deg); } }
 
-    /* Floating Leaves & Cloud Ambient Systems */
-    .ambient-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
-    .floating-leaf {
-      position: absolute; font-size: 24px; pointer-events: none; opacity: 0.35;
-      animation: floatingLeaf 12s infinite linear;
-    }
-    @keyframes floatingLeaf {
-      0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
-      100% { transform: translateY(-10vh) translateX(100px) rotate(360deg); opacity: 0; }
-    }
+/* ==========================================================================GLASSMORPHISM COMPONENT ARCHITECTURE========================================================================== */.glass-card {background: var(--bg-card);backdrop-filter: blur(var(--glass-blur));-webkit-backdrop-filter: blur(var(--glass-blur));border: 1px solid var(--line);border-radius: var(--radius-lg);box-shadow: var(--shadow);transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;}.glass-card {transform: translateY(-6px);border-color: rgba(22, 163, 74, 0.3);box-shadow: 0 30px 60px -15px rgba(11, 61, 36, 0.15);}
 
-    /* Interactive Toast Notifications */
-    #toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 5000; display: flex; flex-direction: column; gap: 10px; }
-    .toast {
-      background: var(--forest); color: white; padding: 14px 24px; border-radius: var(--radius-md);
-      font-size: 13.5px; font-weight: 500; display: flex; align-items: center; gap: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25); animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    @keyframes toastIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+/* Floating Leaves & Cloud Ambient Systems */.ambient-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }.floating-leaf {position: absolute; font-size: 24px; pointer-events: none; opacity: 0.35;animation: floatingLeaf 12s infinite linear;}@keyframes floatingLeaf {0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }10% { opacity: 0.6; }90% { opacity: 0.6; }100% { transform: translateY(-10vh) translateX(100px) rotate(360deg); opacity: 0; }}
 
-    /* Layout Styling */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 1500;
-      display: flex; align-items: center; justify-content: space-between; padding: 0 40px;
-      background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--line); transition: background 0.3s, transform 0.3s;
-    }
-    [data-theme="dark"] .navbar { background: rgba(9, 13, 22, 0.7); }
-    .nav-logo { font-size: 20px; font-weight: 800; color: var(--forest); display: flex; align-items: center; gap: 8px; }
-    .nav-logo span { background: linear-gradient(90deg, var(--green), var(--sky)); -webkit-background-clip: text; color: transparent; }
-    
-    .nav-menu { display: flex; align-items: center; gap: 28px; }
-    .nav-link { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); transition: color 0.3s; position: relative; padding: 6px 0; }
-    .nav-link.active, .nav-link:hover { color: var(--green); }
-    .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--green); transition: width 0.3s ease; }
-    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+/* Interactive Toast Notifications */#toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 5000; display: flex; flex-direction: column; gap: 10px; }.toast {background: var(--forest); color: white; padding: 14px 24px; border-radius: var(--radius-md);font-size: 13.5px; font-weight: 500; display: flex; align-items: center; gap: 10px;box-shadow: 0 10px 30px rgba(0,0,0,0.25); animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;}@keyframes toastIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-    .nav-actions { display: flex; align-items: center; gap: 16px; }
-    .theme-toggle, .search-toggle { background: none; border: none; font-size: 18px; color: var(--ink); cursor: pointer; padding: 6px; border-radius: 50%; transition: background 0.2s; background: var(--line); }
-    
-    .hamburger { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+/* ==========================================================================LAYOUT STYLING (NAVBAR, STICKY SYSTEMS)========================================================================== */.navbar {position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 1500;display: flex; align-items: center; justify-content: space-between; padding: 0 40px;background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px);border-bottom: 1px solid var(--line); transition: background 0.3s, transform 0.3s;}[data-theme="dark"] .navbar { background: rgba(9, 13, 22, 0.7); }.nav-logo { font-size: 20px; font-weight: 800; color: var(--forest); display: flex; align-items: center; gap: 8px; }.nav-logo span { background: linear-gradient(90deg, var(--green), var(--sky)); -webkit-background-clip: text; color: transparent; }
 
-    /* Premium Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 100px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid transparent; }
-    .btn-primary { background: linear-gradient(135deg, var(--forest), var(--forest-soft)); color: #fff; box-shadow: 0 10px 25px -5px rgba(11,61,36,0.3); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(11,61,36,0.45); }
-    .btn-secondary { background: transparent; border-color: var(--line); color: var(--ink); }
-    .btn-secondary:hover { background: var(--line); }
+.nav-menu { display: flex; align-items: center; gap: 28px; }.nav-link { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); transition: color 0.3s; position: relative; padding: 6px 0; }.nav-link, .nav-link.active { color: var(--green); }.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--green); transition: width 0.3s ease; }.nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-    /* Hero Section Styling */
-    .hero-section { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 120px 40px 60px; background: radial-gradient(circle at 80% 20%, rgba(34,197,94,0.1), transparent 50%); }
-    .hero-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.10fr 0.90fr; gap: 60px; align-items: center; width: 100%; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.15); color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
-    .hero-title { font-size: clamp(44px, 5.5vw, 80px); line-height: 1.05; color: var(--forest); font-weight: 700; margin-bottom: 24px; }
-    .hero-title span { background: linear-gradient(120deg, var(--green), var(--lime), var(--sky)); -webkit-background-clip: text; color: transparent; }
-    .hero-desc { font-size: 18px; line-height: 1.6; color: var(--ink-muted); max-width: 600px; margin-bottom: 36px; }
-    
-    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--line); padding-top: 32px; margin-top: 40px; }
-    .stat-item h3 { font-size: clamp(24px, 2.5vw, 36px); color: var(--forest); font-weight: 700; }
-    .stat-item p { font-size: 12px; color: var(--ink-muted); font-weight: 500; margin-top: 4px; text-transform: uppercase; }
+.nav-actions { display: flex; align-items: center; gap: 16px; }.theme-toggle, .search-toggle { background: none; border: none; font-size: 18px; color: var(--ink); cursor: pointer; padding: 6px; border-radius: 50%; transition: background 0.2s; }.theme-toggle, .search-toggle { background: var(--line); }
 
-    #hero-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; }
-    .hero-visual { position: relative; z-index: 2; display: flex; justify-content: center; }
-    .eco-fact-box { margin-top: 30px; padding: 16px 20px; border-radius: var(--radius-md); background: rgba(14,165,233,0.06); border-left: 4px solid var(--sky); max-width: 600px; font-size: 13.5px; line-height: 1.5; color: var(--ink-muted); }
+.hamburger { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }.hamburger span { width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
 
-    /* Secondary Image Exhibition Layout */
-    .exhibition-section { padding: 80px 40px; background: var(--bg-surface); }
-    .exhibition-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .img-wrapper { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); min-height: 380px; background: var(--forest-soft); display: flex; align-items: center; justify-content: center; }
+/* Premium Buttons */.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 100px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid transparent; }.btn-primary { background: linear-gradient(135deg, var(--forest), var(--forest-soft)); color: #fff; box-shadow: 0 10px 25px -5px rgba(11,61,36,0.3); }.btn-primary { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(11,61,36,0.45); }.btn-secondary { background: transparent; border-color: var(--line); color: var(--ink); }.btn-secondary { background: var(--line); }
 
-    /* Responsive adjustments */
-    @media (max-width: 1024px) {
-      .hero-container, .exhibition-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-title { font-size: 48px; }
-      .hero-desc, .eco-fact-box { margin-left: auto; margin-right: auto; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-      .hero-visual { display: none; }
-    }
-    @media (max-width: 768px) {
-      .navbar { padding: 0 20px; }
-      .nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: var(--bg-base); border-bottom: 1px solid var(--line); flex-direction: column; padding: 40px; gap: 24px; transform: translateY(-120%); transition: transform 0.4s ease; z-index: 1400; }
-      .nav-menu.active { transform: translateY(0); }
-      .hamburger { display: flex; }
-    }
-  </style>
+/* ==========================================================================HERO STYLING & INTRO SECTIONS========================================================================== */.hero-section { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 120px 40px 60px; background: radial-gradient(circle at 80% 20%, rgba(34,197,94,0.1), transparent 50%); }.hero-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.10fr 0.90fr; gap: 60px; align-items: center; width: 100%; }.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.15); color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }.hero-title { font-size: clamp(44px, 5.5vw, 80px); line-height: 1.05; color: var(--forest); font-weight: 700; margin-bottom: 24px; }.hero-title span { background: linear-gradient(120deg, var(--green), var(--lime), var(--sky)); -webkit-background-clip: text; color: transparent; }.hero-desc { font-size: 18px; line-height: 1.6; color: var(--ink-muted); max-width: 600px; margin-bottom: 36px; }
+
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--line); padding-top: 32px; margin-top: 40px; }.stat-item h3 { font-size: clamp(24px, 2.5vw, 36px); color: var(--forest); font-weight: 700; }.stat-item p { font-size: 12px; color: var(--ink-muted); font-weight: 500; margin-top: 4px; text-transform: uppercase; }
+
+/* Live Particle Background Canvas Element */#hero-canvas { position: absolute; inset: 0; z-index: 0; pointer-events: none; }.hero-content { position: relative; z-index: 2; }.hero-visual { position: relative; z-index: 2; display: flex; justify-content: center; }
+
+/* Animated Eco Facts Block */.eco-fact-box { margin-top: 30px; padding: 16px 20px; border-radius: var(--radius-md); background: rgba(14,165,233,0.06); border-left: 4px solid var(--sky); max-width: 600px; font-size: 13.5px; line-height: 1.5; color: var(--ink-muted); }
+
+/* General Grid & Content Architecture */.section-pad { padding: 120px 40px; position: relative; }.container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 5; }
+
+.section-header { margin-bottom: 60px; max-width: 700px; }.section-kicker { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--green); letter-spacing: 0.1em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }.section-kicker::before { content: ''; width: 20px; height: 2px; background: var(--green); }.section-title { font-size: clamp(28px, 4vw, 44px); color: var(--forest); line-height: 1.15; font-weight: 700; }.section-desc { font-size: 16px; color: var(--ink-muted); margin-top: 16px; line-height: 1.6; }
+
+/* Typography helpers */.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }.grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+
+/* Dynamic Intersection Observer Animations */.reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Interactive Image Infrastructure */.img-wrapper { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); height: 100%; min-height: 300px; }.img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }.img-wrapper img { transform: scale(1.05); }.img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,61,36,0.7), transparent 60%); padding: 24px; display: flex; align-items: flex-end; }.img-overlay-text { color: white; }
+
+/* PROGRESS BAR STYLING */.prog-container { margin-top: 16px; }.prog-bar-label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 6px; }.prog-bar-track { height: 6px; background: var(--line); border-radius: 10px; overflow: hidden; }.prog-bar-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--lime)); width: 0%; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* INTERACTIVE TIMELINE / ROADMAP */.timeline { position: relative; padding-left: 32px; margin-top: 40px; }.timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--line); }.timeline-item { position: relative; margin-bottom: 40px; }.timeline-dot { position: absolute; left: -32px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-base); border: 4px solid var(--green); transition: 0.3s; }.timeline-item .timeline-dot { background: var(--lime); scale: 1.2; }.timeline-year { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--green); margin-bottom: 6px; }.timeline-title { font-size: 16px; font-weight: 700; color: var(--forest); margin-bottom: 6px; }.timeline-desc { font-size: 14px; color: var(--ink-muted); line-height: 1.5; }
+
+/* INTERACTIVE IMAGE GALLERY & LIGHTBOX */.gallery-filter-menu { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }.filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid var(--line); background: var(--bg-surface); color: var(--ink-muted); font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }.filter-btn.active, .filter-btn { background: var(--forest); color: white; border-color: var(--forest); }.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }.gallery-item { cursor: pointer; height: 240px; border-radius: var(--radius-md); overflow: hidden; position: relative; display: none; }.gallery-item img { width: 100%; height: 100%; transition: 0.4s; }.gallery-item img { transform: scale(1.08); }
+
+#lightbox { position: fixed; inset: 0; background: rgba(9,13,22,0.95); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 40px; backdrop-filter: blur(10px); }#lightbox-img { max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }.lightbox-close { position: absolute; top: 30px; right: 40px; font-size: 36px; color: white; cursor: pointer; }
+
+/* ==========================================================================DASHBOARD MODULE & VECTOR CHARTING========================================================================== */.dash-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: 40px; }.dash-card { grid-column: span 4; padding: 24px; position: relative; overflow: hidden; }.dash-card.large { grid-column: span 6; }.dash-card.full { grid-column: span 12; }.dash-title-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }.dash-title-row h4 { font-size: 15px; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.05em; }.dash-tag { padding: 4px 10px; border-radius: 100px; background: rgba(14,165,233,0.08); color: var(--sky); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+
+/* Custom Vector Map Architecture */.map-wrapper { position: relative; height: 420px; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; overflow: hidden; }.map-svg-container { width: 100%; height: 100%; max-width: 380px; padding: 20px; }.india-path { fill: rgba(22, 163, 74, 0.12); stroke: var(--forest); stroke-width: 1.2; transition: fill 0.3s; cursor: pointer; }.india-path, .india-path.active { fill: var(--green); }
+
+.map-hotspot { position: absolute; width: 12px; height: 12px; background: var(--sky); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(14,165,233,0.3); transition: 0.3s; transform: translate(-50%, -50%); }.map-hotspot { scale: 1.4; background: var(--lime); box-shadow: 0 0 0 8px rgba(163,230,53,0.4); }.map-info-overlay { position: absolute; bottom: 16px; left: 16px; right: 16px; background: var(--forest); color: white; padding: 12px 16px; border-radius: var(--radius-md); font-size: 13px; transform: translateY(10px); opacity: 0; transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }.map-info-overlay.active { transform: translateY(0); opacity: 1; }
+
+/* SVG Raw Vector Charts Engine */.chart-svg { width: 100%; height: 220px; display: block; }.chart-axis { stroke: var(--ink-muted); opacity: 0.3; stroke-width: 1; }.chart-gridline { stroke: var(--line); stroke-width: 1; stroke-dasharray: 4,4; }.chart-line { stroke: var(--green); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 2s ease; }.chart-area { fill: url(#chart-gradient); opacity: 0.15; transform: scaleY(0); transform-origin: bottom; transition: transform 2s ease; }.chart-bar { fill: linear-gradient(to top, var(--forest), var(--green)); transition: height 1s ease, y 1s ease; y: 200px; height: 0; cursor: pointer; }.chart-bar { fill: var(--lime); }
+
+/* Pie Chart Component */.pie-wrapper { display: flex; align-items: center; justify-content: space-around; gap: 20px; height: 180px; }.pie-svg { width: 140px; height: 140px; transform: rotate(-90deg); }.pie-slice { fill: none; stroke-width: 32; stroke-dasharray: 0 1000; transition: stroke-dasharray 1.5s cubic-bezier(0.16, 1, 0.3, 1); }.pie-legend { display: flex; flex-direction: column; gap: 8px; }.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; }.legend-color { width: 12px; height: 12px; border-radius: 3px; }
+
+/* Ring Circular Processing Metric Counters */.ring-chart-container { display: flex; justify-content: space-around; padding: 20px 0; }.ring-widget { text-align: center; }.ring-svg { width: 90px; height: 90px; transform: rotate(-90deg); }.ring-bg { fill: none; stroke: var(--line); stroke-width: 8; }.ring-fill { fill: none; stroke: var(--green); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 251.2; stroke-dashoffset: 251.2; transition: stroke-dashoffset 1.5s ease; }.ring-text { font-family: 'Space Grotesk'; font-size: 16px; font-weight: 700; fill: var(--ink); transform: rotate(90deg); text-anchor: middle; dominant-baseline: middle; }.ring-widget p { font-size: 11px; text-transform: uppercase; font-weight: 600; color: var(--ink-muted); margin-top: 10px; }
+
+/* ==========================================================================INTERACTIVE CALCULATOR & SYSTEMS STYLING========================================================================== */.calc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }.calc-form { display: flex; flex-direction: column; gap: 18px; }.input-group { display: flex; flex-direction: column; gap: 6px; }.input-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--forest); }.input-group input, .input-group select { padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--bg-surface); color: var(--ink); font-family: inherit; font-size: 14px; transition: border-color 0.2s; }.input-group input, .input-group select { outline: none; border-color: var(--green); }
+
+.calc-results-pane { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--line); }.calc-score-display { font-family: 'Space Grotesk'; font-size: 64px; font-weight: 700; color: var(--forest); line-height: 1; }.calc-score-unit { font-size: 14px; font-weight: 600; color: var(--ink-muted); margin-bottom: 20px; text-transform: uppercase; }.calc-feedback-list { text-align: left; width: 100%; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }.calc-feedback-item { display: flex; gap: 8px; color: var(--ink-muted); }
+
+/* ==========================================================================GAMIFIED QUIZ ENGINE GRAPHICS========================================================================== */.quiz-widget { padding: 32px; background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--line); margin-top: 30px; }.quiz-meta-bar { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: var(--ink-muted); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }.quiz-q-text { font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 20px; min-height: 54px; }.quiz-options-stack { display: flex; flex-direction: column; gap: 12px; }.quiz-opt-btn { width: 100%; padding: 14px 20px; border-radius: var(--radius-md); background: var(--bg-base); border: 1px solid var(--line); text-align: left; font-family: inherit; font-size: 14.5px; font-weight: 500; color: var(--ink); cursor: pointer; transition: 0.2s; }.quiz-opt-btn { border-color: var(--green); background: rgba(22,163,74,0.04); }.quiz-opt-btn.correct { background: #DCFCE7; border-color: #22C55E; color: #15803D; }.quiz-opt-btn.wrong { background: #FEE2E2; border-color: #EF4444; color: #B91C1C; }
+
+/* Certification Window Overlays */.modal-overlay { position: fixed; inset: 0; background: rgba(9,13,22,0.8); z-index: 4000; display: none; align-items: center; justify-content: center; padding: 24px; backdrop-filter: blur(8px); }.modal-box { background: var(--bg-base); border-radius: var(--radius-lg); padding: 40px; max-width: 650px; width: 100%; box-shadow: var(--shadow); position: relative; text-align: center; }
+
+/* Print-Ready Dynamic Certificate */.certificate-frame { border: 10px double var(--forest); padding: 32px; background: #FCFDFB; color: #0F2A1A; text-align: center; position: relative; font-family: 'Inter', sans-serif; box-shadow: inset 0 0 40px rgba(11,61,36,0.05); }.cert-header { font-family: 'Space Grotesk'; font-size: 26px; font-weight: 700; color: var(--forest); letter-spacing: 0.05em; text-transform: uppercase; }.cert-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted); margin-top: 4px; }.cert-title { font-size: 15px; italic; color: #334155; margin: 24px 0 10px; }.cert-name { font-family: 'Space Grotesk'; font-size: 28px; font-weight: 700; color: var(--ink); border-bottom: 2px dashed var(--line); display: inline-block; padding: 0 30px; margin-bottom: 16px; }.cert-body { font-size: 13.5px; line-height: 1.6; max-width: 480px; margin: 0 auto 24px; color: var(--ink-muted); }.cert-footer-row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px; padding: 0 20px; }.cert-sig { border-top: 1px solid #94A3B8; width: 140px; font-size: 11px; text-transform: uppercase; font-weight: 600; padding-top: 6px; color: var(--ink-muted); }
+
+/* SYSTEM ACCORDIONS FOR FAQS */.faq-accordion { display: flex; flex-direction: column; gap: 14px; margin-top: 40px; }.faq-row { border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--bg-surface); overflow: hidden; }.faq-trigger { width: 100%; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; font-family: 'Space Grotesk'; font-size: 16px; font-weight: 600; color: var(--forest); cursor: pointer; }.faq-content { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease; font-size: 14.5px; line-height: 1.6; color: var(--ink-muted); }.faq-row.active .faq-content { max-height: 200px; padding-bottom: 20px; }.faq-icon { transition: transform 0.3s; font-size: 18px; }.faq-row.active .faq-icon { transform: rotate(45deg); }
+
+/* ==========================================================================FOOTER MODULES & PRINT CONFIGURATIONS========================================================================== */footer { background: var(--forest); color: rgba(255,255,255,0.7); padding: 80px 40px 30px; border-top: 1px solid var(--line); }.footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }.footer-brand h4 { color: white; font-size: 22px; margin-bottom: 16px; }.footer-col h5 { color: white; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }.footer-col ul { display: flex; flex-direction: column; gap: 12px; }.footer-col a { font-size: 14px; transition: color 0.2s; }.footer-col a { color: var(--lime); }
+
+.newsletter-box { display: flex; gap: 8px; margin-top: 12px; }.newsletter-box input { padding: 10px 14px; border-radius: 100px; border: none; background: rgba(255,255,255,0.1); color: white; font-size: 13px; flex: 1; }.newsletter-box input::placeholder { color: rgba(255,255,255,0.4); }.newsletter-box input { outline: none; background: rgba(255,255,255,0.15); }
+
+.footer-bottom { max-width: 1400px; margin: 40px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 12px; }
+
+#back-to-top { position: fixed; bottom: 24px; left: 24px; width: 44px; height: 44px; background: var(--forest); color: white; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; opacity: 0; transform: translateY(10px); transition: 0.3s; }#back-to-top.visible { opacity: 1; transform: translateY(0); }
+
+/* SEARCH EXPAND OVERLAY */#search-overlay { position: fixed; inset: 0; background: rgba(9,13,22,0.9); backdrop-filter: blur(12px); z-index: 2500; display: none; align-items: center; justify-content: center; padding: 40px; }.search-container { max-width: 600px; width: 100%; text-align: center; }.search-input { width: 100%; background: none; border: none; border-bottom: 3px solid var(--green); font-family: 'Space Grotesk'; font-size: 32px; color: white; padding: 12px 0; outline: none; text-align: center; }.search-close { position: absolute; top: 40px; right: 40px; color: white; font-size: 28px; cursor: pointer; }
+
+/* Print-only adaptations */@media print {body * { display: none !important; }#cert-modal, #cert-modal * { display: block !important; }.modal-overlay { position: absolute; inset: 0; background: white !important; display: flex !important; backdrop-filter: none !important; }.modal-box { box-shadow: none !important; border: none !important; max-width: 100% !important; padding: 0 !important; }.btn, .lightbox-close { display: none !important; }.certificate-frame { border: 6px double #0B3D24 !important; width: 100% !important; height: auto !important; }}
+
+/* Responsive Breakthrough adjustments */@media (max-width: 1024px) {.hero-container { grid-template-columns: 1fr; text-align: center; }.hero-title { font-size: 48px; }.hero-desc, .eco-fact-box { margin-left: auto; margin-dash: auto; margin-right: auto; }.hero-stats { grid-template-columns: repeat(2, 1fr); gap: 30px; }.hero-visual { display: none; }.dash-card, .dash-card.large { grid-column: span 12; }.calc-container { grid-template-columns: 1fr; }}@media (max-width: 768px) {.navbar { padding: 0 20px; }.nav-menu { position: fixed; top: 72px; left: 0; right: 0; background: var(--bg-base); border-bottom: 1px solid var(--line); flex-direction: column; padding: 40px; gap: 24px; transform: translateY(-120%); transition: transform 0.4s ease; z-index: 1400; }.nav-menu.active { transform: translateY(0); }.hamburger { display: flex; }.footer-grid { grid-template-columns: 1fr; gap: 30px; }}</style>
+
 </head>
 <body>
 
@@ -222,9 +141,17 @@
   <a href="#home" class="nav-logo">🍀 <span>TechNova 2047</span></a>
   <ul class="nav-menu" id="mainMenu">
     <li><a href="#home" class="nav-link active">Home</a></li>
-    <li><a href="#exhibition" class="nav-link">Exhibition Gallery</a></li>
+    <li><a href="#intro" class="nav-link">Introduction</a></li>
+    <li><a href="#energy" class="nav-link">Renewable</a></li>
+    <li><a href="#transport" class="nav-link">Transit</a></li>
+    <li><a href="#smartcities" class="nav-link">Cities</a></li>
+    <li><a href="#waste" class="nav-link">Circular</a></li>
+    <li><a href="#dashboard" class="nav-link">Command Desk</a></li>
+    <li><a href="#students" class="nav-link">Students</a></li>
+    <li><a href="#quiz" class="nav-link">Quiz</a></li>
   </ul>
   <div class="nav-actions">
+    <button class="search-toggle" id="searchOpenBtn" aria-label="Open Search">🔍</button>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">🌓</button>
     <span class="mono" id="liveClock" style="font-size: 12px; font-weight: 600; color: var(--ink-muted); padding: 4px 10px; border-radius: 4px; background: var(--line); display: inline-block;">00:00:00</span>
     <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
@@ -233,137 +160,1440 @@
   </div>
 </nav>
 
+<div id="toast-container"></div>
+
+<div id="search-overlay">
+  <span class="search-close" id="searchCloseBtn">×</span>
+  <div class="search-container">
+    <input type="text" class="search-input" id="searchBar" placeholder="Search Green Technologies...">
+    <p class="mono" style="color: rgba(255,255,255,0.4); margin-top: 14px; font-size: 12px;">Type core system names (e.g., Solar, Hydrogen, EV) and strike Enter</p>
+  </div>
+</div>
+
 <section class="hero-section" id="home">
   <canvas id="hero-canvas"></canvas>
   <div class="ambient-container" id="ambientLeaves"></div>
 
   <div class="hero-container">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span style="width:6px; height:6px; background:var(--green-light); border-radius:50%; display:inline-block;"></span> 
-        National Engineering Exhibition Entry
-      </div>
+    <div class="hero-content reveal">
+      <div class="hero-eyebrow"><span style="width:6px; height:6px; background:var(--green-light); border-radius:50%; display:inline-block;"></span> National Engineering Exhibition Entry</div>
       <h1 class="hero-title">Viksit Bharat<br><span>Green Architecture.</span></h1>
       <p class="hero-desc">Deploying robust, intelligent carbon mitigation technologies and circular resource mechanics to secure India's strict target of complete net-zero infrastructure sustainability by the year 2047.</p>
+
+  <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+    <a href="#dashboard" class="btn btn-primary">Systems Dashboard ↓</a>
+    <a href="#pledge-zone" class="btn btn-secondary">Take National Pledge</a>
+  </div>
+
+  <div class="eco-fact-box">
+    <strong class="mono" style="color:var(--sky); display:block; margin-bottom:4px; text-transform:uppercase; font-size:11px;">Ecosystem Insight Generator:</strong>
+    <span id="factText">Loading carbon balancing metric dataset...</span>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item"><h3 class="mono" data-tgt="100" data-sfx="%">0%</h3><p>Renewable Mix</p></div>
+    <div class="stat-item"><h3 class="mono" data-tgt="0" data-lbl="Net Zero">0</h3><p>Carbon Index</p></div>
+    <div class="stat-item"><h3 class="mono" data-tgt="500" data-sfx="+">0</h3><p>Smart Micro-Cities</p></div>
+    <div class="stat-item"><h3 class="mono" data-tgt="1" data-sfx="B+">0</h3><p>Trees Planted</p></div>
+  </div>
+</div>
+
+<div class="hero-visual reveal">
+  <svg viewBox="0 0 500 500" width="100%" height="100%" style="max-width: 440px; filter: drop-shadow(0 30px 50px rgba(11,61,36,0.15));">
+    <defs>
+      <linearGradient id="svgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--green)" />
+        <stop offset="100%" stop-color="var(--sky)" />
+      </linearGradient>
+      <circle id="node" r="8" fill="var(--forest)" stroke="white" stroke-width="2"/>
+    </defs>
+    <circle cx="250" cy="250" r="210" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="6,6"/>
+    <circle cx="250" cy="250" r="150" fill="none" stroke="var(--line)" stroke-width="2"/>
+    <circle cx="250" cy="250" r="110" fill="none" stroke="url(#svgGrad)" stroke-width="3" />
+    <path d="M 140 250 Q 250 180 360 250" fill="none" stroke="url(#svgGrad)" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <path d="M 140 250 Q 250 320 360 250" fill="none" stroke="url(#svgGrad)" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <line x1="250" y1="140" x2="250" y2="360" stroke="var(--line)" stroke-width="1.5"/>
+    <line x1="140" y1="250" x2="360" y2="250" stroke="var(--line)" stroke-width="1.5"/>
+    <use href="#node" x="250" y="140" />
+    <use href="#node" x="250" y="360" />
+    <use href="#node" x="140" y="250" />
+    <use href="#node" x="360" y="250" />
+    <rect x="225" y="225" width="50" height="50" rx="6" fill="var(--forest)" />
+    <line x1="225" y1="250" x2="275" y2="250" stroke="white" stroke-width="1"/>
+    <line x1="250" y1="225" x2="250" y2="275" stroke="white" stroke-width="1"/>
+  </svg>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="intro">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Systems Definition Framework</div>
+      <h2 class="section-title">What is Green Technology?</h2>
+      <p class="section-desc">Green Technology comprises industrial processing mechanisms, architectural guidelines, and hardware arrays designed to convert production pipelines into closed, environmental-neutral self-sustaining operations.</p>
+    </div>
+
+<div class="grid-3 reveal">
+  <div class="glass-card" style="padding:32px;">
+    <div style="font-size:32px; margin-bottom:16px;">🔬</div>
+    <h3 style="color:var(--forest); margin-bottom:12px;">Core Scientific Definition</h3>
+    <p style="font-size:14px; line-height:1.6; color:var(--ink-muted);">The strategic application of structural eco-balanced hardware matrix layers to decouple industrial advancement output vectors from persistent natural degradation metrics.</p>
+  </div>
+  <div class="glass-card" style="padding:32px;">
+    <div style="font-size:32px; margin-bottom:16px;">🛡️</div>
+    <h3 style="color:var(--forest); margin-bottom:12px;">The National Importance</h3>
+    <p style="font-size:14px; line-height:1.6; color:var(--ink-muted);">Secures long-range energy self-sufficiency indexes, insulates the subcontinental geographic agricultural base from climate instability, and generates premium high-tech engineering job frameworks.</p>
+  </div>
+  <div class="glass-card" style="padding:32px;">
+    <div style="font-size:32px; margin-bottom:16px;">📈</div>
+    <h3 style="color:var(--forest); margin-bottom:12px;">Macro-Economic Benefits</h3>
+    <p style="font-size:14px; line-height:1.6; color:var(--ink-muted);">Minimizes volatile crude expenditure allocations, enhances domestic circular manufacturing output efficiency parameters, and positions India as a premier exporter of green heavy equipment platforms.</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background: var(--bg-surface);" id="importance-drivers">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Urgency Assessment Matrix</div>
+      <h2 class="section-title">Critical Ecological Stress Factors</h2>
+      <p class="section-desc">Hover or interact with each dynamic structural threat card below to analyze the corresponding stabilization mechanism engineered under the 2047 target.</p>
+    </div>
+
+<div class="grid-2 reveal">
+  <div class="glass-card" style="padding: 32px; display: flex; gap: 24px;">
+    <div style="font-size:40px;">🔥</div>
+    <div>
+      <h3 style="color:var(--forest); margin-bottom:8px;">Climate Change Mitigation</h3>
+      <p style="font-size:14px; line-height:1.6; color:var(--ink-muted); margin-bottom:12px;">Halting global average thermal temperature spikes by implementing strict carbon scrubbers across existing manufacturing sites.</p>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Mitigation System Deployment Tracker</span><span>68%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="68%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding: 32px; display: flex; gap: 24px;">
+    <div style="font-size:40px;">💨</div>
+    <div>
+      <h3 style="color:var(--forest); margin-bottom:8px;">Atmospheric Pollution Control</h3>
+      <p style="font-size:14px; line-height:1.6; color:var(--ink-muted); margin-bottom:12px;">Replacing urban combustion exhaust lines with zero-emission electric and hydrogen chemical combustion profiles.</p>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Urban Air Index Refinement Progress</span><span>82%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="82%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding: 32px; display: flex; gap: 24px;">
+    <div style="font-size:40px;">⚡</div>
+    <div>
+      <h3 style="color:var(--forest); margin-bottom:8px;">Sovereign Energy Security</h3>
+      <p style="font-size:14px; line-height:1.6; color:var(--ink-muted); margin-bottom:12px;">Transitioning core grid loads from foreign fossil supply dependency pipelines into decentralized local harvesting infrastructure setups.</p>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Grid Supply Independence Index</span><span>91%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="91%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding: 32px; display: flex; gap: 24px;">
+    <div style="font-size:40px;">🏗️</div>
+    <div>
+      <h3 style="color:var(--forest); margin-bottom:8px;">Decoupled Economic Growth</h3>
+      <p style="font-size:14px; line-height:1.6; color:var(--ink-muted); margin-bottom:12px;">Proving gross domestic product expansion metrics can scale linearly while net localized carbon output variables consistently diminish.</p>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Circular Economics Integration</span><span>54%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="54%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="roadmap-framework">
+  <div class="container">
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="section-kicker">National Chronology Protocol</div>
+        <h2 class="section-title">The Viksit Bharat 2047 Strategic Engineering Roadmap.</h2>
+        <p class="section-desc">A strict multi-phase operational layout directing physical asset installation and legacy grid decommissioning over the upcoming decades.</p>
+
+    <div class="img-wrapper" style="margin-top: 32px; height: 320px;">
+      <img data-src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200" alt="Futuristic Solar Farm Integration Layout">
+      <div class="img-overlay">
+        <div class="img-overlay-text">
+          <h4 style="font-size:18px; font-weight:700;">Kamuthi Solar Installation Profile</h4>
+          <p style="font-size:12px; opacity:0.8;">High-density photovoltaic array feeding regional sub-grids.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2030</div>
+        <div class="timeline-title">Decoupled Micro-Grid Standardization</div>
+        <div class="timeline-desc">Mandating localized alternative battery reserves and on-site generation panels across all primary commercial and tier-1 municipal production blocks.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2035</div>
+        <div class="timeline-title">Heavy Freight Hydrogen Transit Networks</div>
+        <div class="timeline-desc">Complete conversion of long-distance transport corridors to active compressed hydrogen combustion, completely phasing out reliance on old high-sulfur diesel compounds.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2042</div>
+        <div class="timeline-title">Total Municipal Smart Loop Deployment</div>
+        <div class="timeline-desc">Integration of automated AI leak identification tools and real-time electronic waste refinement sorting complexes across secondary urban zones.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2047</div>
+        <div class="timeline-title">The Sovereign Net-Zero Sovereign Milestone</div>
+        <div class="timeline-desc">Full unification of macro energy, waste handling, and agricultural water usage systems under standard 100% pollution-neutral conditions.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-surface);" id="energy">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Generation Sub-Systems</div>
+      <h2 class="section-title">Primary Clean Energy Generations Matrix</h2>
+      <p class="section-desc">Analyzing the engineering specifications driving India's diversified, carbon-free energy grid matrix.</p>
+    </div>
+
+<div class="grid-2 reveal" style="margin-bottom:32px;">
+  <div class="img-wrapper" style="height: 380px;">
+    <img data-src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1200" alt="High Capacity Floating Solar Installation India">
+    <div class="img-overlay">
+      <div class="img-overlay-text">
+        <h4>Decentralized Floating Photovoltaic Reservoirs</h4>
+        <p style="font-size:13px; opacity:0.85;">Mitigating open-water body evaporation losses while maintaining highly optimized operating cell thermal conditions.</p>
+      </div>
+    </div>
+  </div>
+  <div class="img-wrapper" style="height: 380px;">
+    <img data-src="https://images.unsplash.com/photo-1398846175317-063dbba10c71?q=80&w=1200" alt="Offshore Wind Field Matrix Grid">
+    <div class="img-overlay">
+      <div class="img-overlay-text">
+        <h4>Offshore Mega-Turbine Generation Systems</h4>
+        <p style="font-size:13px; opacity:0.85;">Harnessing continuous oceanic thermal drafts to feed high-velocity alternating current loads straight into core coastal distribution nodes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid-3 reveal">
+  <div class="glass-card" style="padding:28px;">
+    <span style="font-size:28px;">☀️</span>
+    <h4 style="color:var(--forest); margin:12px 0 6px;">Solar Infrastructure</h4>
+    <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Utilizing micro-tracked bifacial modules that absorb direct sunlight on the front face and secondary ground bounce radiation on the back face.</p>
+    <div class="mono" style="font-size:11px; margin-top:14px; color:var(--green); font-weight:700;">INITIATIVE: National Solar Mission</div>
+  </div>
+  <div class="glass-card" style="padding:28px;">
+    <span style="font-size:28px;">🌬️</span>
+    <h4 style="color:var(--forest); margin:12px 0 6px;">Wind Harvesting Fields</h4>
+    <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Deploying direct-drive permanent magnet generators that operate efficiently even inside low-velocity wind zones across inland terrain environments.</p>
+    <div class="mono" style="font-size:11px; margin-top:14px; color:var(--green); font-weight:700;">UTILITY: Basal Marine Power Delivery</div>
+  </div>
+  <div class="glass-card" style="padding:28px;">
+    <span style="font-size:28px;">💧</span>
+    <h4 style="color:var(--forest); margin:12px 0 6px;">Hydropower Systems</h4>
+    <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Run-of-the-river turbines built to capitalize on high mountain stream velocities without creating large backwater storage pool situations.</p>
+    <div class="mono" style="font-size:11px; margin-top:14px; color:var(--green); font-weight:700;">CAPACITY: Peak Mountain Discharge Unification</div>
+  </div>
+  <div class="glass-card" style="padding:28px;">
+    <span style="font-size:28px;">🌱</span>
+    <h4 style="color:var(--forest); margin:12px 0 6px;">Bioenergy Conversion</h4>
+    <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Biochemical digester complexes converting agricultural residual crop waste directly into highly purified compressed bio-gas compounds.</p>
+    <div class="mono" style="font-size:11px; margin-top:14px; color:var(--green); font-weight:700;">STRATEGY: SATAT Organic Reuse Integration</div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="transport">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Low-Emission Transit Matrix</div>
+      <h2 class="section-title">Decarbonizing National Mobility Logistics</h2>
+      <p class="section-desc">Transitioning commuter systems into a completely integrated, zero-tailpipe vehicular infrastructure setup.</p>
+    </div>
+
+<div class="grid-3 reveal">
+  <div class="glass-card" style="padding:0; overflow:hidden;">
+    <div style="height:180px; overflow:hidden;">
+      <img data-src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800" alt="EV Charging Infrastructure Array" style="width:100%; height:100%;">
+    </div>
+    <div style="padding:24px;">
+      <h4 style="color:var(--forest); margin-bottom:6px;">Modular Electric Mobility (EV)</h4>
+      <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Scaling safe lithium iron phosphate chemistry batteries across public lines, backed by decentralized fast-charging ring loops.</p>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding:0; overflow:hidden;">
+    <div style="height:180px; overflow:hidden;">
+      <img data-src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800" alt="High Speed Electric Rail Network" style="width:100%; height:100%;">
+    </div>
+    <div style="padding:24px;">
+      <h4 style="color:var(--forest); margin-bottom:6px;">High-Capacity Transit Links</h4>
+      <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Expanding light-rail automated electric subway channels seamlessly interconnected to localized multi-passenger heavy e-buses.</p>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding:0; overflow:hidden;">
+    <div style="height:180px; overflow:hidden;">
+      <img data-src="https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=800" alt="Hydrogen Logistics Engineering Station" style="width:100%; height:100%;">
+    </div>
+    <div style="padding:24px;">
+      <h4 style="color:var(--forest); margin-bottom:6px;">Hydrogen Fuel Cell Freight</h4>
+      <p style="font-size:13.5px; color:var(--ink-muted); line-height:1.5;">Deploying chemical proton-exchange membranes for high-tonnage multi-axle freight lines, emitting only water vapor output.</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-surface);" id="smartcities">
+  <div class="container">
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="section-kicker">Intelligent Municipal Layouts</div>
+        <h2 class="section-title">Biophilic Architectural Infrastructure Nodes.</h2>
+        <p class="section-desc">Transforming major urban areas into interconnected smart ecosystems that dynamically adjust resource usage metrics through integrated IoT data tracking systems.</p>
+
+    <div class="glass-card" style="padding:24px; margin-top:28px;">
+      <h4 style="font-size:15px; font-weight:700; color:var(--forest); margin-bottom:12px;">Core Smart City Sub-Systems Overview:</h4>
+      <ul style="display:flex; flex-direction:column; gap:12px; font-size:13.5px; color:var(--ink-muted);">
+        <li>🏢 <strong>GRIHA 5-Star Smart Buildings:</strong> Passive architectural thermal insulation loops reducing primary air conditioning load draw vectors by up to 45%.</li>
+        <li>💡 <strong>Adaptive Mesh Street Lighting:</strong> Centrally managed LED infrastructure arrays modulated dynamically via embedded vehicle density flow sensors.</li>
+        <li>🌧️ <strong>Subterranean Water Basins:</strong> High-volume collection vaults built below heavy commercial hardscaping to handle intense monsoon flash deluges.</li>
+        <li>🌳 <strong>Biophilic Thermal Sinks:</strong> Urban vertical forest high-rises explicitly designated to lower average city heat dome effects.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="img-wrapper" style="height:100%;">
+      <img data-src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?q=80&w=1200" alt="Futuristic Biophilic Architectural Skyscraper Profile">
+      <div class="img-overlay">
+        <div class="img-overlay-text">
+          <h4>Unified Micro-Municipal Control Architecture</h4>
+          <p style="font-size:13px; opacity:0.85;">Automated infrastructure footprints combining organic vertical plantings directly alongside active carbon-capture facades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="waste">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Closed Loop Mechanics</div>
+      <h2 class="section-title">Circular Waste & Water Management Automation</h2>
+      <p class="section-desc">Phasing out standard municipal landfills and open sewage lines by implementing strict processing and recovery loops.</p>
+    </div>
+
+<div class="grid-2 reveal">
+  <div class="glass-card" style="padding:32px;">
+    <h3 style="color:var(--forest); margin-bottom:16px; display:flex; align-items:center; gap:8px;">♻️ Automated Resource Recovery Loops</h3>
+    <p style="font-size:14px; color:var(--ink-muted); line-height:1.6; margin-bottom:20px;">Every piece of municipal waste represents a highly valuable secondary material cache. Our systems utilize strict optical sorting mechanics to isolate raw materials.</p>
+    
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:13px;">
+      <div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-md);">
+        <strong>🍂 Biochemical Composting:</strong> Processing city organic refuse metrics straight into high-nutrient fertilizers.
+      </div>
+      <div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-md);">
+        <strong>🥤 Synthetics Pyrolysis:</strong> Converting old rigid polymers into chemical composites for road construction.
+      </div>
+      <div style="background:var(--bg-surface); padding:14px; border-radius:var(--radius-md); grid-column:span 2;">
+        <strong>💻 Rare Earth E-Waste Refining:</strong> Safely extracting high-value copper, silver, and gold trace metrics from dead computing elements without toxic tailing leaks.
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding:32px;">
+    <h3 style="color:var(--forest); margin-bottom:16px; display:flex; align-items:center; gap:8px;">💧 Smart Hydrological Distribution</h3>
+    <p style="font-size:14px; color:var(--ink-muted); line-height:1.6; margin-bottom:20px;">Water structural security is protected by combining high-efficiency recycling loops directly with automated agricultural drip line equipment.</p>
+    
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Greywater Membrane Recycling Yield</span><span>92%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="92%"></div></div>
+      </div>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Precision Subsurface Roots Moisture Delivery</span><span>87%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="87%"></div></div>
+      </div>
+      <div class="prog-container">
+        <div class="prog-bar-label"><span>Ultrasonic Smart Municipal Leak Interdiction</span><span>76%</span></div>
+        <div class="prog-bar-track"><div class="prog-bar-fill" data-w="76%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-surface);" id="innovations-gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Visual Proof Index</div>
+      <h2 class="section-title">Green Technology Installations Gallery</h2>
+      <p class="section-desc">Filter through real photographs detailing operational alternative clean installations and domestic agritech solutions across India.</p>
+    </div>
+
+<div class="gallery-filter-menu reveal">
+  <button class="filter-btn active" data-cat="all">All Infrastructure</button>
+  <button class="filter-btn" data-cat="generation">Generation Hubs</button>
+  <button class="filter-btn" data-cat="transit">Urban Transit</button>
+  <button class="filter-btn" data-cat="farming">Smart Agritech</button>
+</div>
+
+<div class="gallery-grid reveal">
+  <div class="gallery-item" data-cat="generation">
+    <img data-src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=600" alt="High Resolution Solar Farm Grid Array">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>Mega Scale Photovoltaic Parks</h5></div></div>
+  </div>
+  <div class="gallery-item" data-cat="transit">
+    <img data-src="https://images.unsplash.com/photo-1557223562-6c77ef16210f?q=80&w=600" alt="High Speed Electric Commuter Metro Train">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>Zero Emission Electric Metro Lines</h5></div></div>
+  </div>
+  <div class="gallery-item" data-cat="farming">
+    <img data-src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=600" alt="Automated Subsurface Drip Agriculture Setup">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>Precision Root-Zone Drip Irrigation</h5></div></div>
+  </div>
+  <div class="gallery-item" data-cat="generation">
+    <img data-src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600" alt="Coastal Wind Turbine Farm Assembly">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>Coastal High Velocity Wind Fields</h5></div></div>
+  </div>
+  <div class="gallery-item" data-cat="transit">
+    <img data-src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600" alt="Electric Vehicular Fleet Commercial Charger Hub">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>High Voltage Fast Charger Loops</h5></div></div>
+  </div>
+  <div class="gallery-item" data-cat="farming">
+    <img data-src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=600" alt="Hydroponics Controlled Farming Infrastructure Laboratory">
+    <div class="img-overlay"><div class="img-overlay-text"><h5>Controlled Environment Automated Farms</h5></div></div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<div id="lightbox">
+  <span class="lightbox-close" id="lightboxCloseBtn">×</span>
+  <img id="lightbox-img" src="" alt="Expanded View Asset">
+</div>
+
+<section class="section-pad" id="dashboard">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Unified Technical Analytics</div>
+      <h2 class="section-title">National Infrastructure Simulation Desk</h2>
+      <p class="section-desc">Real-time analytical data projections detailing clean system performance metrics across key geographic sectors.</p>
+    </div>
+
+<div class="dash-grid reveal">
+  <div class="glass-card dash-card large">
+    <div class="dash-title-row">
+      <h4>Geographic Strategic Hotspots Map</h4>
+      <span class="dash-tag">Live Sensor Nodes</span>
+    </div>
+    <div class="map-wrapper">
+      <div class="map-svg-container">
+        <svg viewBox="0 0 100 100" width="100%" height="100%">
+          <path class="india-path" d="M 50 10 L 65 25 L 75 40 L 70 55 L 60 70 L 50 90 L 45 75 L 35 60 L 25 45 L 30 30 L 40 20 Z" />
+        </svg>
+      </div>
+      <div class="map-hotspot" style="top: 45%; left: 32%;" data-title="Modhera Solar Array Ecosystem, Gujarat" data-detail="India's premier 24/7 fully solar-powered residential grid community layout, operating entirely on localized consumer battery backups."></div>
+      <div class="map-hotspot" style="top: 72%; left: 42%;" data-title="Pavagada Mega Photovoltaic Reserve, Karnataka" data-detail="Spanning thousands of acres of dry terrain, delivering over two gigawatts of direct solar tracking capacity into the core southern macro grid line."></div>
+      <div class="map-hotspot" style="top: 86%; left: 46%;" data-title="Muppandal Offshore Wind Field Network, Tamil Nadu" data-detail="One of the largest contiguous operational land-based wind farm structures globally, exploiting deep oceanic thermal draft channels."></div>
       
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <a href="#exhibition" class="btn btn-primary">Exhibition Gallery ↓</a>
-      </div>
-
-      <div class="eco-fact-box">
-        <strong class="mono" style="color:var(--sky); display:block; margin-bottom:4px; text-transform:uppercase; font-size:11px;">Ecosystem Insight Generator:</strong>
-        <span id="factText">Optimized grid infrastructure operating smoothly at baseline limits.</span>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item"><h3 class="mono">100%</h3><p>Renewable Mix</p></div>
-        <div class="stat-item"><h3 class="mono">0</h3><p>Carbon Index</p></div>
-        <div class="stat-item"><h3 class="mono">500+</h3><p>Smart Micro-Cities</p></div>
-        <div class="stat-item"><h3 class="mono">1B+</h3><p>Trees Planted</p></div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <svg viewBox="0 0 500 500" width="100%" height="100%" style="max-width: 440px; filter: drop-shadow(0 30px 50px rgba(11,61,36,0.15));">
-        <defs>
-          <linearGradient id="svgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="var(--green)" />
-            <stop offset="100%" stop-color="var(--sky)" />
-          </linearGradient>
-          <circle id="node" r="8" fill="var(--forest)" stroke="white" stroke-width="2"/>
-        </defs>
-        <circle cx="250" cy="250" r="210" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="6,6"/>
-        <circle cx="250" cy="250" r="150" fill="none" stroke="var(--line)" stroke-width="2"/>
-        <circle cx="250" cy="250" r="110" fill="none" stroke="url(#svgGrad)" stroke-width="3" />
-        
-        <path d="M 140 250 Q 250 180 360 250" fill="none" stroke="url(#svgGrad)" stroke-width="1.5" />
-        <path d="M 140 250 Q 250 320 360 250" fill="none" stroke="url(#svgGrad)" stroke-width="1.5" />
-        
-        <use href="#node" x="140" y="250" />
-        <use href="#node" x="360" y="250" />
-        <use href="#node" x="250" y="140" />
-        <use href="#node" x="250" y="360" />
-        
-        <circle cx="250" cy="250" r="40" fill="var(--bg-base)" stroke="var(--lime)" stroke-width="3" />
-        <text x="250" y="255" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="var(--forest)" text-anchor="middle">2047</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<section class="exhibition-section" id="exhibition">
-  <div class="exhibition-grid">
-    <div class="img-wrapper">
-      <svg width="100%" height="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, var(--forest), var(--forest-soft));">
-        <g opacity="0.25" stroke="rgba(255,255,255,0.4)" stroke-width="1">
-          <line x1="0" y1="100" x2="600" y2="100" />
-          <line x1="0" y1="200" x2="600" y2="200" />
-          <line x1="0" y1="300" x2="600" y2="300" />
-          <line x1="150" y1="0" x2="150" y2="400" />
-          <line x1="300" y1="0" x2="300" y2="400" />
-          <line x1="450" y1="0" x2="450" y2="400" />
-        </g>
-        <circle cx="300" cy="200" r="70" fill="none" stroke="var(--lime)" stroke-width="4" stroke-dasharray="8,4" />
-        <path d="M 150 250 L 300 120 L 450 250 Z" fill="none" stroke="var(--sky)" stroke-width="3" />
-        <text x="300" y="370" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600" text-anchor="middle">Sustainable Energy Macro-Grid Blueprint</text>
-      </svg>
-    </div>
-
-    <div style="display: flex; flex-direction: column; justify-content: center; padding: 20px;">
-      <h2 class="title-font" style="font-size: 32px; color: var(--forest); margin-bottom: 16px;">Intelligent Macro-Grid Topography</h2>
-      <p style="color: var(--ink-muted); line-height: 1.6; margin-bottom: 24px;">Our engineering framework blueprints clean, unified utility nodes working in tandem with smart consumer loads. Interconnected arrays maintain active energy routing calculations to avoid blackouts while operating purely on sustainable solar, hydro, and hydrogen generators.</p>
-      <div style="display:flex; gap:12px;">
-        <span class="mono" style="padding: 6px 12px; background: var(--line); border-radius: 6px; font-size:12px; color:var(--green); font-weight:700;">#RenewableGrid</span>
-        <span class="mono" style="padding: 6px 12px; background: var(--line); border-radius: 6px; font-size:12px; color:var(--sky); font-weight:700;">#Decarbonization</span>
+      <div class="map-info-overlay" id="mapLabel">
+        <strong id="mapLabelTitle" style="display:block; font-size:14px; font-family:'Space Grotesk'; margin-bottom:4px;">Hotspot Node Active</strong>
+        <span id="mapLabelDetail">Click any blue sensor node on the map structure to verify localized performance indices.</span>
       </div>
     </div>
   </div>
+
+  <div class="glass-card dash-card large">
+    <div class="dash-title-row">
+      <h4>Renewable Output Baseline Capacity (TWh)</h4>
+      <span class="dash-tag">Annual Projections</span>
+    </div>
+    <svg class="chart-svg" id="svgLineChart" viewBox="0 0 500 220">
+      <defs>
+        <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--green)" />
+          <stop offset="100%" stop-color="var(--green)" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <line x1="40" y1="10" x2="40" y2="190" class="chart-axis" />
+      <line x1="40" y1="190" x2="480" y2="190" class="chart-axis" />
+      <line x1="40" y1="130" x2="480" y2="130" class="chart-gridline" />
+      <line x1="40" y1="70" x2="480" y2="70" class="chart-gridline" />
+      <path class="chart-area" d="M40,190 L40,160 L120,140 L200,110 L280,85 L360,55 L440,30 L440,190 Z" />
+      <path class="chart-line" d="M40,160 L120,140 L200,110 L280,85 L360,55 L440,30" id="animLinePath" />
+      <text x="40" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2026</text>
+      <text x="120" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2030</text>
+      <text x="200" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2034</text>
+      <text x="280" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2038</text>
+      <text x="360" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2042</text>
+      <text x="440" y="205" fill="var(--ink-muted)" font-size="10" font-family="JetBrains Mono" text-anchor="middle">2047</text>
+    </svg>
+  </div>
+
+  <div class="glass-card dash-card">
+    <div class="dash-title-row">
+      <h4>Ecosystem Status Metrics</h4>
+      <span class="dash-tag">IoT Streams</span>
+    </div>
+    <div class="ring-chart-container">
+      <div class="ring-widget">
+        <svg class="ring-svg">
+          <circle class="ring-bg" cx="45" cy="45" r="40"/>
+          <circle class="ring-fill" cx="45" cy="45" r="40" data-pct="0.85" stroke="var(--green)"/>
+          <text x="45" y="-41" class="ring-text">85%</text>
+        </svg>
+        <p>Forest Cap</p>
+      </div>
+      <div class="ring-widget">
+        <svg class="ring-svg">
+          <circle class="ring-bg" cx="45" cy="45" r="40"/>
+          <circle class="ring-fill" cx="45" cy="45" r="40" data-pct="0.72" stroke="var(--sky)"/>
+          <text x="45" y="-41" class="ring-text">72%</text>
+        </svg>
+        <p>EV Fleet</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card dash-card">
+    <div class="dash-title-row">
+      <h4>Energy Procurement Segmentation</h4>
+      <span class="dash-tag">Core Mix</span>
+    </div>
+    <div class="pie-wrapper">
+      <svg class="pie-svg" viewBox="0 0 64 64">
+        <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--green)" id="pieSlice1"/>
+        <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--sky)" id="pieSlice2"/>
+        <circle class="pie-slice" cx="32" cy="32" r="16" stroke="var(--lime)" id="pieSlice3"/>
+      </svg>
+      <div class="pie-legend">
+        <div class="legend-item"><div class="legend-color" style="background:var(--green);"></div><span>55% Solar PV</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:var(--sky);"></div><span>30% Wind fields</span></div>
+        <div class="legend-item"><div class="legend-color" style="background:var(--lime);"></div><span>15% Hydro/Bio</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card dash-card">
+    <div class="dash-title-row">
+      <h4>Atmospheric Emissions Trend Metric</h4>
+      <span class="dash-tag">MMT CO₂ Equity</span>
+    </div>
+    <svg class="chart-svg" viewBox="0 0 240 220" id="svgBarChart">
+      <line x1="30" y1="10" x2="30" y2="190" class="chart-axis" />
+      <line x1="30" y1="190" x2="230" y2="190" class="chart-axis" />
+      <rect class="chart-bar" x="50" width="24" data-h="160" />
+      <rect class="chart-bar" x="100" width="24" data-h="110" />
+      <rect class="chart-bar" x="150" width="24" data-h="60" />
+      <rect class="chart-bar" x="200" width="24" data-h="20" />
+    </svg>
+  </div>
+
+</div>
+
+  </div>
 </section>
+
+<section class="section-pad" style="background: var(--bg-surface);" id="footprint-calc">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Resource Balance Equation</div>
+      <h2 class="section-title">Carbon Footprint Analysis Simulator</h2>
+      <p class="section-desc">Compute your approximate annualized domestic carbon emission contribution variables based on basic lifestyle asset data selections.</p>
+    </div>
+
+<div class="glass-card reveal" style="padding: 40px;">
+  <div class="calc-container">
+    <div class="calc-form">
+      <div class="input-group">
+        <label for="calcElec">Monthly Grid Household Power Draw (kWh)</label>
+        <input type="number" id="calcElec" value="250" min="0">
+      </div>
+      <div class="input-group">
+        <label for="calcTransit">Annual Vehicle Distance Logged (Kilometers)</label>
+        <input type="number" id="calcTransit" value="8000" min="0">
+      </div>
+      <div class="input-group">
+        <label for="calcTransitType">Primary Private Vehicle Propulsion Engine Profile</label>
+        <select id="calcTransitType">
+          <option value="0.21">Internal Combustion (Petrol/Diesel Line)</option>
+          <option value="0.05">Hybrid Electric Power Management Setup</option>
+          <option value="0.00">100% Pure Battery Vehicle (EV Ecosystem)</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="calcFlights">Annual Regional Air Travel Commutes (Total Flights)</label>
+        <input type="number" id="calcFlights" value="2" min="0">
+      </div>
+      <button class="btn btn-primary" style="margin-top:10px;" onclick="processCarbonFootprint()">Execute Structural Footprint Run</button>
+    </div>
+
+    <div class="calc-results-pane">
+      <div class="calc-score-display" id="calcOutScore">3.4</div>
+      <div class="calc-score-unit">Estimated Metric Tonnes CO₂ / Annum</div>
+      
+      <div class="calc-feedback-list" id="calcFeedbackContainer">
+        <div class="calc-feedback-item">🌱 <em>Review options to implement local efficiency enhancements.</em></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="students">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Granular Grassroots Action</div>
+      <h2 class="section-title">The Student Environmental Action Framework</h2>
+      <p class="section-desc">Ecosystem balance relies strictly on atomic micro-choices executed consistently across domestic community footprints.</p>
+    </div>
+
+<div class="grid-5 reveal" style="margin-bottom: 50px;">
+  <div class="glass-card" style="padding:24px; text-align:center;">
+    <div style="font-size:36px; margin-bottom:8px;">🌳</div>
+    <h5 style="color:var(--forest); font-size:15px; margin-bottom:4px;">Plant Native Flora</h5>
+    <p style="font-size:12px; color:var(--ink-muted);">Restoring indigenous soil integrity variables.</p>
+  </div>
+  <div class="glass-card" style="padding:24px; text-align:center;">
+    <div style="font-size:36px; margin-bottom:8px;">🔌</div>
+    <h5 style="color:var(--forest); font-size:15px; margin-bottom:4px;">Eliminate Vampire Loads</h5>
+    <p style="font-size:12px; color:var(--ink-muted);">Isolating structural power draws at source ports.</p>
+  </div>
+  <div class="glass-card" style="padding:24px; text-align:center;">
+    <div style="font-size:36px; margin-bottom:8px;">🚲</div>
+    <h5 style="color:var(--forest); font-size:15px; margin-bottom:4px;">Human Powered Cycles</h5>
+    <p style="font-size:12px; color:var(--ink-muted);">Cutting urban short range combustion events completely.</p>
+  </div>
+  <div class="glass-card" style="padding:24px; text-align:center;">
+    <div style="font-size:36px; margin-bottom:8px;">❌</div>
+    <h5 style="color:var(--forest); font-size:15px; margin-bottom:4px;">Reject Single Polymers</h5>
+    <p style="font-size:12px; color:var(--ink-muted);">Halting linear plastic pollution streams permanently.</p>
+  </div>
+  <div class="glass-card" style="padding:24px; text-align:center;">
+    <div style="font-size:36px; margin-bottom:8px;">🗑️</div>
+    <h5 style="color:var(--forest); font-size:15px; margin-bottom:4px;">Dry/Wet Separation</h5>
+    <p style="font-size:12px; color:var(--ink-muted);">Ensuring materials flow directly to processing hubs.</p>
+  </div>
+</div>
+
+<div class="grid-2 reveal">
+  <div class="glass-card" style="padding:32px;">
+    <h3 style="color:var(--forest); margin-bottom:12px;">🏆 Weekly Micro-Sustainability Challenge</h3>
+    <p style="font-size:14px; color:var(--ink-muted); line-height:1.6; margin-bottom:16px;">Complete these three core actions this week to trigger your environmental baseline security optimization points.</p>
+    <ul style="display:flex; flex-direction:column; gap:10px; font-size:13.5px;">
+      <li><input type="checkbox" id="ch1" onclick="updateChallengeScore()"> <label for="ch1"><strong>Log 5 Kilometers via Cycle or Walk routes:</strong> Suppress transit output profiles.</label></li>
+      <li><input type="checkbox" id="ch2" onclick="updateChallengeScore()"> <label for="ch2"><strong>Isolate standby desktop monitors overnight:</strong> Eradicate continuous vampire power.</label></li>
+      <li><input type="checkbox" id="ch3" onclick="updateChallengeScore()"> <label for="ch3"><strong>Process three multi-polymer elements for recycling:</strong> Feed circular pipelines.</label></li>
+    </ul>
+    <div class="mono" id="challengeScoreText" style="font-size:12px; margin-top:20px; color:var(--sky); font-weight:700;">CHALLENGE STATUS: 0/3 ACTIONS COMPLETED</div>
+  </div>
+
+  <div class="glass-card" style="padding:32px; display:flex; flex-direction:column; justify-content:center;">
+    <h4 style="color:var(--forest); margin-bottom:14px;">Ecosystem Achievement Milestones (Dummy Leaderboard)</h4>
+    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+      <div style="background:var(--bg-surface); padding:10px 14px; border-radius:8px; font-size:12px; font-weight:600; border-left:3px solid var(--green);">🏅 Micro Carbon Crusader</div>
+      <div style="background:var(--bg-surface); padding:10px 14px; border-radius:8px; font-size:12px; font-weight:600; border-left:3px solid var(--sky);">⚡ Grid Autonomy Cadet</div>
+      <div style="background:var(--bg-surface); padding:10px 14px; border-radius:8px; font-size:12px; font-weight:600; border-left:3px solid var(--lime);">🔄 Circular Specialist</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-surface);" id="quiz">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Knowledge Verification Routine</div>
+      <h2 class="section-title">Green Technology Verification Matrix</h2>
+      <p class="section-desc">Pass our strict 10-question technical competency examination stack to generate an official digital technology literacy qualification print-ready certificate.</p>
+    </div>
+
+<div class="glass-card reveal quiz-widget">
+  <div class="quiz-meta-bar">
+    <span>Question Node: <strong id="quizActiveIndex">1</strong> / 10</span>
+    <span>Running Competency Score: <strong id="quizRunningScore">0</strong></span>
+  </div>
+  <div id="quizQuestionBody">
+    <p class="quiz-q-text" id="quizQuestionText">Loading verification query data parameters...</p>
+    <div class="quiz-options-stack" id="quizOptionsContainer">
+      </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" id="pledge-zone">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center; margin:0 auto 50px;">
+      <div class="section-kicker" style="justify-content:center;">Civic Alignment Protocol</div>
+      <h2 class="section-title">The "I Pledge to Save Nature" Sovereign Registry</h2>
+      <p class="section-desc" style="margin-left:auto; margin-right:auto;">Formally bind your individual parameters to the clean engineering timeline goals of Viksit Bharat 2047.</p>
+    </div>
+
+<div class="grid-2 reveal">
+  <div class="glass-card" style="padding:32px;">
+    <h4 style="color:var(--forest); margin-bottom:16px;">Sovereign Registration Input Fields</h4>
+    <div class="calc-form">
+      <div class="input-group"><label>Full Citizen Signature Name</label><input type="text" id="pledgeName" value="Arjun Sharma"></div>
+      <div class="input-group"><label>Educational Institution / School Entity</label><input type="text" id="pledgeSchool" value="Delhi National Science Academy"></div>
+      <div class="input-group"><label>Regional Base / City Location Location</label><input type="text" id="pledgeCity" value="New Delhi"></div>
+      <button class="btn btn-primary" onclick="renderDynamicPledgeCertificate()">Compile & Sign Digital Declaration</button>
+    </div>
+  </div>
+
+  <div class="glass-card" style="padding:20px; background:#fff; display:flex; align-items:center; justify-content:center;">
+    <div id="pledgeCertPlaceholder" style="text-align:center; color:var(--ink-muted); font-size:13.5px; padding:40px;">
+      🖋️ Complete the left field coordinates parameters and strike the generation execution key to compile your printable environmental alliance document layout.
+    </div>
+    
+    <div class="certificate-frame" id="livePledgeCert" style="display:none; width:100%;">
+      <div class="cert-header">Sovereign Alliances Record</div>
+      <div class="cert-sub">Viksit Bharat 2047 Green Technology Initiative</div>
+      <div class="cert-title">This document formalizes that individual alignment parameters for</div>
+      <div class="cert-name" id="lblCertName">Citizen Name</div>
+      <div class="cert-body">
+        operating out of <strong id="lblCertSchool">Institution Name</strong> (<span id="lblCertCity">City</span>), have been successfully encrypted into the ecological preservation database network, binding execution of daily alternative resources protection routines.
+      </div>
+      <div class="cert-footer-row">
+        <div><div style="font-size:12px; font-weight:700; color:var(--forest);">#2047-NETZERO</div><div style="font-size:9px; color:var(--ink-muted); text-transform:uppercase;">Network Token Hash</div></div>
+        <div class="cert-sig">TechNova Registrar</div>
+      </div>
+      <button class="btn btn-secondary" style="margin-top:24px; padding:6px 16px; font-size:11px;" onclick="window.print()">Trigger Output Print Interface</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-surface);" id="contact-gate">
+  <div class="container">
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="section-kicker">Data Transmission Port</div>
+        <h2 class="section-title">Submit Local System Feedback Profiles</h2>
+        <p class="section-desc">Transmit field notes, alternative energy configuration ideas, or laboratory query structures directly to our core diagnostic engineering terminal array.</p>
+
+    <form class="glass-card" style="padding:32px; margin-top:28px;" onsubmit="handleSecureFormSubmit(event)">
+      <div class="form-group input-group" style="margin-bottom:14px;">
+        <label>User Identity Identifier</label>
+        <input type="text" id="cName" required placeholder="Ex: Engineer Dev">
+      </div>
+      <div class="form-group input-group" style="margin-bottom:14px;">
+        <label>Secure Network Email Node</label>
+        <input type="email" id="cEmail" required placeholder="dev@network.in">
+      </div>
+      <div class="form-group input-group" style="margin-bottom:14px;">
+        <label>Contextual Diagnostic Message</label>
+        <textarea id="cMsg" rows="4" style="padding:12px 16px; border-radius:var(--radius-md); border:1px solid var(--line); background:var(--bg-surface); color:var(--ink); font-family:inherit; font-size:14px;" required placeholder="Enter transmission structural payload notes..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Transmit Packet Payload</button>
+    </form>
+  </div>
+
+  <div class="reveal">
+    <h3 style="color:var(--forest); font-size:22px; margin-bottom:16px;">Verified Institutional Reference Links</h3>
+    <ul style="display:flex; flex-direction:column; gap:12px; font-size:14px; color:var(--ink-muted); margin-bottom:40px;">
+      <li>• <a href="#" style="color:var(--green); font-weight:600; text-decoration:underline;">Ministry of New & Renewable Energy (MNRE) Database Portal</a></li>
+      <li>• <a href="#" style="color:var(--green); font-weight:600; text-decoration:underline;">NITI Aayog National Long Range Strategy Blueprint Data</a></li>
+      <li>• <a href="#" style="color:var(--green); font-weight:600; text-decoration:underline;">Smart Cities Mission Infrastructure Automation Standard Rules</a></li>
+      <li>• <a href="#" style="color:var(--green); font-weight:600; text-decoration:underline;">GRIHA Advanced Building Thermal Isolation Guidelines Document</a></li>
+    </ul>
+
+    <h3 style="color:var(--forest); font-size:22px; margin-bottom:16px;">Core Framework System FAQs</h3>
+    <div class="faq-accordion">
+      <div class="faq-row">
+        <button class="faq-trigger"><span>What defines the absolute base milestone target of Viksit Bharat 2047?</span><span class="faq-icon">+</span></button>
+        <div class="faq-content">The platform mandates matching geometric heavy industrial expansion directly with zero net carbon footprint additions, achieving self-replenishing hydrological operations and complete municipal processing loop coverage nationwide by the centenary milestone of 2047.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-trigger"><span>Why are rare earth recovery loops vital to advanced electronic waste complexes?</span><span class="faq-icon">+</span></button>
+        <div class="faq-content">Advanced computational architectures require massive allocations of rare materials like neodymium and indium. Isolating these assets from expired logic arrays through clean hydrometallurgy bypasses landscape-damaging standard elemental ore extraction processes entirely.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<div class="modal-overlay" id="quizCertModal">
+  <div class="modal-box">
+    <h3 style="color:var(--forest); font-size:24px; margin-bottom:8px;">Competency Threshold Validated!</h3>
+    <p style="font-size:14px; color:var(--ink-muted); margin-bottom:24px;">You scored 80% or higher on the diagnostic exam. Your system certification document has been compiled successfully.</p>
+
+<div class="certificate-frame" style="background:#fff; margin-bottom:20px;">
+  <div class="cert-header">Green Technology Literacy Qualification</div>
+  <div class="cert-sub">Viksit Bharat Technical Infrastructure Core Standard</div>
+  <div class="cert-title">This credential serves to verify that technical metrics for applicant</div>
+  <div class="cert-name" id="quizCertPlayerName">Technical Scholar</div>
+  <div class="cert-body">have passed strict MCQ systemic evaluations covering renewable generation arrays, grid logic synchronization, and circular structural asset tracking protocols.</div>
+  <div class="cert-footer-row">
+    <div><div style="font-size:11px; font-weight:700;">VERIFIED ACCREDITATION</div></div>
+    <div class="cert-sig">TechNova Science Board</div>
+  </div>
+</div>
+
+<div style="display:flex; gap:12px; justify-content:center;">
+  <button class="btn btn-primary" onclick="window.print()">Print Operational Certificate</button>
+  <button class="btn btn-secondary" onclick="document.getElementById('quizCertModal').style.display='none';">Close System Overlay</button>
+</div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>🍀 TechNova 2047</h4>
+      <p style="font-size:13px; opacity:0.7; line-height:1.6; margin-top:10px;">National digital framework cataloging high-fidelity carbon mitigation setups, alternative energy hardware assets, and student coordination channels.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Architecture Grid</h5>
+      <ul>
+        <li><a href="#home">Home Base Node</a></li>
+        <li><a href="#energy">Generation Matrix</a></li>
+        <li><a href="#dashboard">Sensor Desk Analytics</a></li>
+        <li><a href="#students">Action Operations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Sovereign Networks</h5>
+      <ul>
+        <li><a href="#">MNRE Hub Data Link</a></li>
+        <li><a href="#">NITI Aayog Frameworks</a></li>
+        <li><a href="#">ISRO EcoSat Tracking Systems</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Ecosystem Broadcasts</h5>
+      <p style="font-size:12px; opacity:0.6; line-height:1.4;">Subscribe to receive real-time updates regarding engineering system upgrades.</p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="secure_node@domain.in">
+        <button class="btn btn-primary" style="padding:6px 14px; font-size:11px;" onclick="triggerToastNotification('Subsurface subscription node authorized successfully.')">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div style="display:flex; gap:20px; opacity:0.4; font-size:11px; font-weight:700; letter-spacing:0.05em;">
+      <span>MNRE DESIGNATED ENTRY</span><span>ISRO GREENSAT UNIFIED CORE</span><span>NITI AAYOG COMPLIANT MATRIX</span>
+    </div>
+    <p style="opacity:0.5;">© 2047 TechNova · Government of India Science Exhibition & Hackathon Conceptual Blueprint Registry</p>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Return to Top Port">↑</button>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    // Dismiss Loader
-    const loader = document.getElementById('loader-screen');
-    setTimeout(() => {
-      loader.style.opacity = '0';
-      setTimeout(() => loader.style.display = 'none', 600);
-    }, 800);
+  /* 1. COMPREHENSIVE VARIABLE ARRAYS & ECO TIPS CACHE (100+ Datasets) */
+  const ECO_TIPS_DATABASE = [
+    "Switching consumer computer lines off at the wall plug limits continuous vampire standby draws up to 10% on baseline meters.",
+    "Applying smart dual-layer insulation panels inside domestic frames matches structural thermodynamic rules to drop HVAC costs by 35%.",
+    "Segregating bio-organic kitchen damp refuse items enables large municipal composting loops to process premium landscape nutrients safely.",
+    "Utilizing micro subsurface irrigation lines delivers moisture profiles directly to root targets, stopping open evaporation vapor losses entirely.",
+    "Replacing legacy interior light fixtures with mesh adaptive solid-state LED arrays yields an immediate 45% efficiency optimization metric.",
+    "Procuring consumer groceries via regional sustainable markets dampens carbon freight logistics metrics across regional tracking grids.",
+    "Isolating operational battery cell recharge ports immediately after threshold completion limits structural thermal breakdown factors.",
+    "Deploying reflective premium silver coatings on flat urban roof profiles bounces ambient thermal energy away, shrinking localized heat domes.",
+    "Structuring vertical planter grids along household outer exposures generates protective native microclimates that isolate wind drafts.",
+    "Prioritizing human-powered bicycle transits for municipal journeys under 4 kilometers limits short range combustion events cleanly.",
+    "Operating smart water wash cycles exclusively under maximal equipment capacity limits unnecessary processing drainage volumes.",
+    "Passing defective lithium or silicon processing items straight to authorized refining complexes feeds key metal recycling loops.",
+    "Replacing chemical kitchen cleaning liquids with organic compounds protects local subterranean greywater recycling purification layers.",
+    "Utilizing structural rain barrels below household roof downspouts traps pure soft water assets for irrigation setups.",
+    "Lowering household water boiler baseline configurations to exactly 50 degrees Celsius stops redundant thermal processing waste loops.",
+    "Using thick natural fiber curtains inside living structures traps internal heat metrics perfectly during cold seasonal transitions.",
+    "Upgrading legacy single-pane glass fittings with double gas-insulated components introduces robust acoustic and thermal barriers.",
+    "Structuring structural residential gardens with regional native plants lowers structural reliance on synthetic industrial chemical additives.",
+    "Transitioning local administrative workflows to strict paperless digital systems saves municipal woodland carbon sequestration capacities.",
+    "Using public transport light rail networks cuts localized urban particulate tracking loads up to 80% compared to private transit cars.",
+    "Configuring electronic device interfaces to native dark mode options across high volume loops preserves asset battery cell lifecycle metrics.",
+    "Utilizing smart multi-port power strips with automated timing rules cuts off non-essential accessory hardware loops systematically.",
+    "Structuring local community micro-compost bins converts landscape grass cuttings into highly effective soil nitrogen boosters.",
+    "Fixing standard domestic pipeline drips instantly saves thousands of liters of clean tracking assets from processing drainage loops.",
+    "Installing aerator adapters onto kitchen and bathroom sink fixtures preserves pressure delivery while reducing aggregate water volume flow.",
+    "Using reusable silicon canvas covers instead of disposable plastic wraps halts high volume multi-polymer garbage creation streams.",
+    "Configuring smart home automation rules to drop building temperatures while spaces are unoccupied optimizes power distribution.",
+    "Using manual hand tools for basic domestic landscaping activities removes small gas combustion engine exhaust emissions completely.",
+    "Replacing old non-inverter appliance hardware with smart dual-inverter tracking setups optimizes variable electric current draws.",
+    "Using sustainable bamboo-derived elements instead of standard hardwood blocks blocks unnecessary high canopy harvesting events.",
+    "Isolating non-essential internal hallway lighting parameters during daylight cycles relies on organic window daylighting channels.",
+    "Supporting local community tree planting drives introduces key long-range biological carbon storage tools inside urban centers.",
+    "Choosing clothing elements made from natural unblended fibers allows textiles to disintegrate naturally without microfiber pollution.",
+    "Using micro-filtration mesh shields inside floor drains stops fine synthetic particles from migrating into open river networks.",
+    "Structuring household storage layouts using recycled cardboard containers minimizes reliance on newly injection-molded polymer units.",
+    "Relying on natural air drying channels for clothing assets replaces heavy high-wattage mechanical thermal spin dryer operations cleanly.",
+    "Using simple ceramic drip water filters offers safe localized processing without continuous electrical power requirements.",
+    "Setting desktop computing loops to enter deep hibernate status after five tracking minutes optimizes processor line idling efficiency.",
+    "Using modern mineral-based wall paint alternatives prevents hazardous volatile organic chemical off-gassing actions inside rooms.",
+    "Installing smart motion activated switches inside communal storage spaces prevents lights from staying active in empty zones.",
+    "Using dense organic mulch beds across outdoor topsoils traps continuous water deposits, protecting microbial subterranean layers.",
+    "Choosing durable tool hardware built under strict modular repair frameworks reduces structural e-waste disposal loads.",
+    "Using natural wool rugs across hard floor spaces adds secondary thermal protection metrics to lower structural baseline heating needs.",
+    "Isolating decorative external lighting systems during migratory bird seasons protects local wildlife paths.",
+    "Using reusable cloth bags for consumer logistics prevents high volumes of single-use thin poly bags from entering waste streams.",
+    "Relying on physical ceiling fans instead of high load compressor cooling systems optimize ambient comfort at low energy draw.",
+    "Using small induction heating setups instead of wide open gas burners achieves highly focused thermal energy transfer metrics.",
+    "Configuring smart water monitors on incoming building feeds lets users trace tracking consumption spikes via digital interfaces.",
+    "Using natural structural cork elements for wall notice displays provides sustainable insulation attributes with rapid bark renewal.",
+    "Structuring community share groups for heavy garden equipment tools prevents redundant manufacturing demands across neighborhoods.",
+    "Using non-toxic natural beeswax elements for structural seal coatings drops reliance on petroleum derived synthetic lacquer bases.",
+    "Isolating unnecessary vehicle cargo weights maximizes overall kilometer fuel efficiency metrics during transit schedules.",
+    "Using automated drip irrigation lines on timing tracks schedules hydration loops exclusively during early morning low evaporation periods.",
+    "Supporting clean public park renewal projects maintains essential vegetative balance zones inside dense metropolitan cores.",
+    "Using simple solar powered path markers stores lighting energy directly during daylight hours for nocturnal pathway navigation.",
+    "Choosing writing tools built using recycled paper casings helps optimize aggregate post-consumer recycling materials demand.",
+    "Using simple unbleached cardboard boxes for organic packaging avoids the deployment of chemical chlorine whitening compounds.",
+    "Setting home cleaning appliances to specialized eco operation modes matches hardware parameters to conservative resource limits.",
+    "Using local stone elements for path layouts bypasses the intense carbon footprint metrics involved in standard heavy concrete mixing.",
+    "Structuring shared urban rooftop gardens combines social interaction spaces alongside localized fresh vegetation harvesting nodes.",
+    "Using specialized natural enzymes inside washing cycles clears debris from fabrics efficiently under low water temperature values.",
+    "Choosing electronic hardware models explicitly carrying long-range manufacturer repair guarantees prolongs operational lifecycles.",
+    "Using simple window awning projections blocks intense vertical midday summer solar radiation while retaining pleasant winter lighting angles.",
+    "Relying on local public library resource networks drops structural production demands for physical multi-media manufacturing tracks.",
+    "Using small personal thermal mugs prevents massive daily accumulations of plastic-lined disposable single-use hot beverage cups.",
+    "Structuring home document storage loops on encrypted cloud nodes cuts physical filing space requirements across office centers.",
+    "Using high efficiency micro-fiber cleaning materials minimizes the need for synthetic surface decontamination soaps.",
+    "Isolating non-essential background notification triggers on cellular networks drops multi-stage data center load handling metrics.",
+    "Using simple clay storage vessels keeps fresh food items pleasantly cool in dry regions without relying on active electrical cycles.",
+    "Choosing floor tile selections manufactured from post-industrial composite minerals expands systemic secondary raw material loops.",
+    "Using simple manual push reel lawn mowers for localized lawn care removes urban noise and fuel exhaust profiles seamlessly.",
+    "Supporting domestic eco-tourism ventures ensures local funding streams flow directly into wildlife and forestry management efforts.",
+    "Using recycled glass containers for dry kitchen item storage completely avoids toxic polymer chemical structural leaching vectors.",
+    "Isolating active vehicle air conditioning systems when outside windows offer comfortable cross ventilation drops fuel draw metrics.",
+    "Using simple durable canvas covers to protect outdoor equipment items extends functional lifecycles against sun degradation.",
+    "Choosing bedding assemblies made from certified organic fiber elements optimizes end-of-lifecycle decomposition compatibility.",
+    "Using simple solar water heating roof loops collects direct thermal energy to fulfill primary domestic shower fluid needs.",
+    "Isolating residential water pumps during peak regional grid load intervals stabilizes national power grid distribution balances.",
+    "Using simple dynamic window blinds lets occupants adjust room thermal values by tracking changing outdoor sun paths.",
+    "Choosing consumer goods shipped in compressed efficient shipping bundles optimizes global freight volume allocation targets.",
+    "Using simple natural dynamic charcoal air filters binds volatile internal odors safely without relying on synthetic chemical spray cans.",
+    "Supporting local community tool banks allows residents to lease precision repair instruments easily without individual purchases.",
+    "Using simple unglazed ceramic planters lets plant root structures breathe naturally, reducing fungal decay hazards.",
+    "Isolating redundant smart home voice tracking systems when not in use drops hidden standby processing power demands.",
+    "Using simple durable steel lunch boxes completely removes reliance on single-use multi-layered preservation foil wraps.",
+    "Choosing regional native tree models for yard settings introduces deep root metrics that stabilize regional groundwater tables.",
+    "Using simple micro-fleece textile filters inside machine drain lines captures microplastic fragments before sewer transit.",
+    "Setting screen brightness settings on large television monitors to energy saving levels prolongs underlying panel lifecycles.",
+    "Using simple local wood chips along landscape borders suppresses weeds naturally while enriching underlying topsoil metrics over time.",
+    "Choosing writing inks containing clean plant based pigment elements eliminates reliance on complex synthetic chemical compounds.",
+    "Using simple window mesh panels provides pleasant cooling airflow inside rooms while blocking localized pests cleanly.",
+    "Supporting regional wetland restoration drives preserves crucial biological filters that clean incoming municipal runoff fields.",
+    "Using simple natural twine cords for tying needs replaces rigid synthetic nylon plastic fastening wires cleanly.",
+    "Isolating active cooking ranges moments before complete processing steps leverages remaining built-in cookware thermal energy.",
+    "Using simple structural earth bricks for outdoor borders offers high strength attributes with zero energy kiln baking actions.",
+    "Choosing luggage items constructed using recycled PET ocean plastic components helps clean up delicate coastal marine habitats.",
+    "Using simple automated watering sensors halts irrigation loops instantly when natural rain events provide enough moisture.",
+    "Supporting clean environmental science exhibitions builds important public knowledge regarding net-zero engineering paths.",
+    "Using simple personal water flasks completely stops the ongoing creation of single-use thin injection molded polymer bottles.",
+    "Committing to unified clean technology execution paths guarantees a safe, self-renewing, brilliant India for the 2047 centenary milestone!"
+  ];
 
-    // Live Clock Module
-    setInterval(() => {
-      const now = new Date();
-      document.getElementById('liveClock').innerText = now.toTimeString().split(' ')[0];
+  const QUIZ_QUESTIONS = [
+    { q: "Which green technology processes organic municipal residue directly into clean biogas solutions?", o: ["A) Advanced Industrial Bioenergy Networks", "B) Petrochemical Hydrocarbon Refineries", "C) Nuclear Fission Core Generators", "D) High Velocity Thermal Incinerators"], a: 0 },
+    { q: "What specific metric defines the core sovereign environmental objective for Viksit Bharat 2047?", o: ["A) Maximizing Coal Extraction Speeds", "B) Complete Domestic Net-Zero Carbon Balance", "C) Phasing Out All Water Distribution Lines", "D) Halting Urban Digital Metros System Expansion"], a: 1 },
+    { q: "What type of solar infrastructure operates on open water assets to lower evaporation rates?", o: ["A) High Altitude Tracking Towers", "B) Subterranean Crystalline Inverters", "C) Floating Photovoltaic Array Reservoirs", "D) Geothermal Heat Induction Plates"], a: 2 },
+    { q: "Which element is cleanly recovered from expired computing logic components by e-waste refining units?", o: ["A) Heavy Crude Residue", "B) Rare Earth & Precious Metals", "C) Microfiber Synthetic Polymers", "D) Low Density Polyethylene"], a: 1 },
+    { q: "What urban construction model explicitly cuts vehicular energy draws via adaptive illumination nodes?", o: ["A) High Efficiency Passive HVAC Lines", "B) Smart Mesh LED Street Lighting", "C) Open Surface Rainwater Harvesting Aquifers", "D) Biophilic Vertical Heat Dome Absorbers"], a: 1 },
+    { q: "What legal mandate forces manufacturers to build items to fit smoothly back into circular recovery loops?", o: ["A) Extended Producer Responsibility (EPR)", "B) Fossil Procurement Subsidy Allocation", "C) Municipal Open Disposal Deregulation", "D) Linear Product Obsolescence Guidelines"], a: 0 },
+    { q: "What agricultural methodology utilizes subsurface automated lines to irrigate root targets accurately?", o: ["A) High Volume Surface Flood Basins", "B) Precision Drip Irrigation Arrays", "C) Over-Canopy High Pressure Sprinklers", "D) Unmonitored Artesian Aquifer Extractions"], a: 1 },
+    { q: "Which government initiative specifically integrates domestic farming loops alongside solar panel arrays?", o: ["A) Swachh Bharat Mission Framework", "B) National Green Hydrogen Protocol", "C) PM Kusum Scheme Allocation", "D) Smart Cities Mission Lighting Guidelines"], a: 2 },
+    { q: "What toxic emission compound is completely absent from pure hydrogen fuel cell exhaust lines?", o: ["A) High Temperature Carbon Dioxide", "B) Vaporized Pure Liquid Water", "C) Ambient Atmospheric Nitrogen Traces", "D) Oxygen Molecule Combinations"], a: 0 },
+    { q: "How do active urban biophilic vertical forest infrastructure setups optimize city block temperatures?", o: ["A) Injecting Synthetic Chemical Coolants", "B) Countering Dense Municipal Heat Dome Effects", "C) Blocking Organic Sunlight Channels Entirely", "D) Maximizing Concrete Surface Reflection Variables"], a: 1 }
+  ];
+
+  /* 2. INITIALIZATION LOOPS, CORE APP LIFE CYCLES & LIGHT/DARK MANAGEMENT */
+  window.addEventListener('DOMContentLoaded', () => {
+    // Shutdown system loading overlay
+    setTimeout(() => {
+      const loader = document.getElementById('loader-screen');
+      loader.style.opacity = '0';
+      loader.style.transform = 'scale(1.02)';
+      setTimeout(() => loader.style.display = 'none', 600);
     }, 1000);
 
-    // Theme Toggle Controller
-    const themeBtn = document.getElementById('themeBtn');
-    themeBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-    });
+    initializeDynamicCustomCursor();
+    initializeAmbientLeavesSystem();
+    initializeRealTimeClock();
+    shuffleEcosystemInsightsGenerator();
+    renderActiveQuizQuestionRow();
+    lazyLoadVisualAssetsPipeline();
+    initializeGlobalSearchEngine();
+  });
 
-    // Mobile Navbar Hamburger Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const mainMenu = document.getElementById('mainMenu');
-    menuToggle.addEventListener('click', () => {
-      mainMenu.classList.toggle('active');
-    });
+  // Dark/Light Mode Theme Toggle Engine
+  const themeBtn = document.getElementById('themeBtn');
+  themeBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    triggerToastNotification(`System theme set to ${nextTheme.toUpperCase()} mode blueprint.`);
+  });
 
-    // Custom Interactive Cursor Target Follower
+  // Hamburger Mobile Menu Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainMenu = document.getElementById('mainMenu');
+  menuToggle.addEventListener('click', () => mainMenu.classList.toggle('active'));
+  mainMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mainMenu.classList.remove('active')));
+
+  // Scroll Progress and Sticky Navbar Logic
+  window.addEventListener('scroll', () => {
+    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalScroll) * 100;
+    document.getElementById('scroll-progress').style.width = `${progress}%`;
+    
+    const btt = document.getElementById('back-to-top');
+    if (window.scrollY > 400) btt.classList.add('visible'); else btt.classList.remove('visible');
+  });
+  document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  /* 3. CORE ANIMATION ENGINES: INTERSECTION OBSERVERS & LIVE HERO CANVAS PARTICLES */
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        
+        // Trigger specific sub-animations for progress bars inside card components
+        entry.target.querySelectorAll('.prog-bar-fill').forEach(bar => {
+          bar.style.width = bar.getAttribute('data-w');
+        });
+
+        // Trigger dynamic vector dashboard visualizations
+        if(entry.target.id === 'dashboard') animateVectorDashboardVisuals();
+        // Trigger numerical statistic counters
+        entry.target.querySelectorAll('.stat-item h3').forEach(counter => executeNumericalCounter(counter));
+      }
+    });
+  }, { threshold: 0.12 });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // High Performance Canvas Particle Animation Loop
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  
+  function resizeCanvas() {
+    canvas.width = canvas.parentElement.offsetWidth;
+    canvas.height = canvas.parentElement.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  class EcoParticle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = Math.random() * 0.4 - 0.2;
+      this.speedY = Math.random() * -0.6 - 0.1;
+      this.alpha = Math.random() * 0.5 + 0.2;
+    }
+    update() {
+      this.x += this.speedX; this.y += this.speedY;
+      if (this.y < 0) { this.y = canvas.height; this.x = Math.random() * canvas.width; }
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.fillStyle = '#22C55E';
+      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+  }
+  for(let i=0; i<45; i++) particles.push(new EcoParticle());
+  function loopParticles() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(loopParticles);
+  }
+  loopParticles();
+
+  /* 4. CUSTOM COMPONENT CONTROLLERS: FLOATING LEAVES & ACTIVE NOTIFICATION TOASTS */
+  function initializeAmbientLeavesSystem() {
+    const container = document.getElementById('ambientLeaves');
+    const leafSymbols = ['🍃', '🌿', '🌱'];
+    setInterval(() => {
+      if(document.hidden) return;
+      const leaf = document.createElement('div');
+      leaf.className = 'floating-leaf';
+      leaf.textContent = leafSymbols[Math.floor(Math.random() * leafSymbols.length)];
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.animationDuration = Math.random() * 6 + 8 + 's';
+      leaf.style.fontSize = Math.random() * 16 + 16 + 'px';
+      container.appendChild(leaf);
+      setTimeout(() => leaf.remove(), 14000);
+    }, 4500);
+  }
+
+  function triggerToastNotification(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<span>⚡</span> <span>${message}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(-10px)';
+      setTimeout(() => toast.remove(), 300);
+    }, 4000);
+  }
+
+  function initializeDynamicCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
-    document.addEventListener('mousemove', (e) => {
+    if(window.matchMedia('(pointer: coarse)').matches) { cursor.style.display = 'none'; return; }
+    window.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
+    document.querySelectorAll('a, button, .gallery-item, .map-hotspot').forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%, -50%) scale(1.6)'; cursor.style.backgroundColor = 'rgba(34,197,94,0.15)'; });
+      el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%, -50%) scale(1)'; cursor.style.backgroundColor = 'transparent'; });
+    });
+  }
 
-    // Scroll Progress Multi-bar Engine
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('scroll-progress').style.width = scrolled + '%';
+  function initializeRealTimeClock() {
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById('liveClock').textContent = now.toTimeString().split(' ')[0];
+    }, 1000);
+  }
+
+  function shuffleEcosystemInsightsGenerator() {
+    const factText = document.getElementById('factText');
+    setInterval(() => {
+      factText.style.opacity = '0';
+      setTimeout(() => {
+        factText.textContent = ECO_TIPS_DATABASE[Math.floor(Math.random() * ECO_TIPS_DATABASE.length)];
+        factText.style.opacity = '1';
+      }, 300);
+    }, 8000);
+    factText.textContent = ECO_TIPS_DATABASE[0];
+  }
+
+  function executeNumericalCounter(el) {
+    const target = parseFloat(el.getAttribute('data-tgt'));
+    const suffix = el.getAttribute('data-sfx') || '';
+    if(el.getAttribute('data-lbl')) { el.textContent = el.getAttribute('data-lbl'); return; }
+    let current = 0;
+    const duration = 1500;
+    const startTimestamp = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTimestamp) / duration, 1);
+      current = progress * target;
+      el.textContent = Math.floor(current) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* 5. DYNAMIC INTERACTIVE GALLERY WITH LAZY LOADING */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-cat');
+      galleryItems.forEach(item => {
+        if(cat === 'all' || item.getAttribute('data-cat') === cat) {
+          item.style.display = 'block';
+          const img = item.querySelector('img');
+          if(img.getAttribute('data-src')) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); }
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
+  // Trigger initial filter view parameters
+  document.querySelector('.filter-btn[data-cat="all"]').click();
+
+  function lazyLoadVisualAssetsPipeline() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+          imgObserver.unobserve(img);
+        }
+      });
+    });
+    lazyImages.forEach(img => imgObserver.observe(img));
+  }
+
+  // Lightbox Modal Functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.querySelector('img').src;
+      lightbox.style.display = 'flex';
+    });
+  });
+  document.getElementById('lightboxCloseBtn').addEventListener('click', () => lightbox.style.display = 'none');
+
+  /* 6. VECTOR DASHBOARD: MAP LOGIC & SVG CHART ANIMATIONS */
+  document.querySelectorAll('.map-hotspot').forEach(spot => {
+    spot.addEventListener('click', (e) => {
+      const overlay = document.getElementById('mapLabel');
+      document.getElementById('mapLabelTitle').textContent = spot.getAttribute('data-title');
+      document.getElementById('mapLabelDetail').textContent = spot.getAttribute('data-detail');
+      overlay.classList.add('active');
+      triggerToastNotification(`Queried hotspot telemetry sensor node data successfully.`);
+      e.stopPropagation();
+    });
+  });
+  document.addEventListener('click', () => document.getElementById('mapLabel').classList.remove('active'));
+
+  function animateVectorDashboardVisuals() {
+    // Animate SVG Line Chart Path drawing
+    const path = document.getElementById('animLinePath');
+    path.style.strokeDashoffset = '0';
+    document.querySelector('.chart-area').style.transform = 'scaleY(1)';
+
+    // Animate SVG Bar Elements height metrics
+    document.querySelectorAll('#svgBarChart .chart-bar').forEach(bar => {
+      const tgtH = bar.getAttribute('data-grid-h') || bar.getAttribute('data-h');
+      bar.setAttribute('height', tgtH);
+      bar.setAttribute('y', 190 - tgtH);
+    });
+
+    // Animate Radial Processing Rings
+    document.querySelectorAll('.ring-fill').forEach(ring => {
+      const pct = parseFloat(ring.getAttribute('data-pct'));
+      const circumference = 2 * Math.PI * 40;
+      ring.style.strokeDashoffset = circumference * (1 - pct);
+    });
+
+    // Animate Dynamic Pie Chart Slices variables
+    const slice1 = document.getElementById('pieSlice1');
+    const slice2 = document.getElementById('pieSlice2');
+    const slice3 = document.getElementById('pieSlice3');
+    const c = 2 * Math.PI * 16;
+    
+    slice1.style.strokeDasharray = `${c * 0.55} ${c}`;
+    slice2.style.strokeDasharray = `${c * 0.30} ${c}`; slice2.style.strokeDashoffset = `-${c * 0.55}`;
+    slice3.style.strokeDasharray = `${c * 0.15} ${c}`; slice3.style.strokeDashoffset = `-${c * 0.85}`;
+  }
+
+  /* 7. CARBON CALCULATOR FORM ARCHITECTURE LOGIC */
+  function processCarbonFootprint() {
+    const elec = parseFloat(document.getElementById('calcElec').value) || 0;
+    const distance = parseFloat(document.getElementById('calcTransit').value) || 0;
+    const transMultiplier = parseFloat(document.getElementById('calcTransitType').value);
+    const flights = parseFloat(document.getElementById('calcFlights').value) || 0;
+
+    // Standardized physical equations for metric outputs calculation formulas
+    const elecCO2 = (elec * 12 * 0.82) / 1000;
+    const transitCO2 = (distance * transMultiplier) / 1000;
+    const flightCO2 = flights * 0.24;
+    const aggregateScore = (elecCO2 + transitCO2 + flightCO2 + 0.45).toFixed(1);
+
+    document.getElementById('calcOutScore').textContent = aggregateScore;
+    
+    const feedbackBox = document.getElementById('calcFeedbackContainer');
+    feedbackBox.innerHTML = '';
+    
+    let tips = [];
+    if(elec > 200) tips.push("❌ Your domestic grid draw parameters exceed standards. Consider integrating rooftop photovoltaic cells.");
+    if(transMultiplier > 0.1) tips.push("❌ Carbon combustion engine profile detected. Transitioning to a local EV grid saves up to 2.1 tonnes yearly.");
+    if(flights > 1) tips.push("❌ Multi flight operations detected. Support regional high-speed clean electric rail transit setups.");
+    if(tips.length === 0) tips.push("🏆 Excellent execution profile! Your metrics align safely with our standard 2047 net-zero framework target benchmarks.");
+
+    tips.forEach(t => {
+      const item = document.createElement('div'); item.className = 'calc-feedback-item'; item.textContent = t;
+      feedbackBox.appendChild(item);
+    });
+    triggerToastNotification("Recalculated lifestyle footprint metrics successfully.");
+  }
+
+  /* 8. COMPLETE 10-QUESTION MCQ VERIFICATION ENGINE */
+  let currentQuizIndex = 0;
+  let currentQuizScore = 0;
+
+  function renderActiveQuizQuestionRow() {
+    const currentQuestion = QUIZ_QUESTIONS[currentQuizIndex];
+    document.getElementById('quizActiveIndex').textContent = currentQuizIndex + 1;
+    document.getElementById('quizQuestionText').textContent = currentQuestion.q;
+    
+    const container = document.getElementById('quizOptionsContainer');
+    container.innerHTML = '';
+    
+    currentQuestion.o.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-opt-btn';
+      btn.textContent = opt;
+      btn.onclick = () => evaluateQuizUserSelection(idx, btn);
+      container.appendChild(btn);
+    });
+  }
+
+  function evaluateQuizUserSelection(selectedIndex, clickedBtn) {
+    const currentQuestion = QUIZ_QUESTIONS[currentQuizIndex];
+    const buttons = document.querySelectorAll('.quiz-opt-btn');
+    buttons.forEach(b => b.disabled = true);
+
+    if(selectedIndex === currentQuestion.a) {
+      clickedBtn.classList.add('correct');
+      currentQuizScore += 10;
+      document.getElementById('quizRunningScore').textContent = currentQuizScore;
+      triggerToastNotification("Technical answer metric verified: Correct.");
+    } else {
+      clickedBtn.classList.add('wrong');
+      buttons[currentQuestion.a].classList.add('correct');
+      triggerToastNotification("Technical mismatch anomaly caught. Option correction applied.");
+    }
+
+    setTimeout(() => {
+      if(currentQuizIndex < QUIZ_QUESTIONS.length - 1) {
+        currentQuizIndex++;
+        renderActiveQuizQuestionRow();
+      } else {
+        processQuizFinalReportingMetrics();
+      }
+    }, 1500);
+  }
+
+  function processQuizFinalReportingMetrics() {
+    triggerToastNotification(`Diagnostic stack finalized. Terminal score registered: ${currentQuizScore}/100`);
+    if(currentQuizScore >= 80) {
+      const candidateName = document.getElementById('pledgeName').value || "Technical Scholar";
+      document.getElementById('quizCertPlayerName').textContent = candidateName;
+      document.getElementById('quizCertModal').style.display = 'flex';
+    } else {
+      // Automatic fallback restart mechanism
+      triggerToastNotification("Score falls below 80% competency thresholds. Restarting testing sequence framework.");
+      currentQuizIndex = 0; currentQuizScore = 0;
+      document.getElementById('quizRunningScore').textContent = '0';
+      renderActiveQuizQuestionRow();
+    }
+  }
+
+  /* 9. PLEDGE CERTIFICATION LAYER COMPILATION ENGINE */
+  function renderDynamicPledgeCertificate() {
+    const name = document.getElementById('pledgeName').value.toUpperCase();
+    const school = document.getElementById('pledgeSchool').value;
+    const city = document.getElementById('pledgeCity').value;
+
+    document.getElementById('lblCertName').textContent = name;
+    document.getElementById('lblCertSchool').textContent = school;
+    document.getElementById('lblCertCity').textContent = city;
+
+    document.getElementById('pledgeCertPlaceholder').style.display = 'none';
+    document.getElementById('livePledgeCert').style.display = 'block';
+    triggerToastNotification("Compiled printable environmental declaration certificate successfully.");
+  }
+
+  /* 10. SYSTEM UTILITIES: SECURE FORMS, GLOBAL SEARCH & FAQS SYSTEM ACCORDIONS */
+  function updateChallengeScore() {
+    let count = 0;
+    if(document.getElementById('ch1').checked) count++;
+    if(document.getElementById('ch2').checked) count++;
+    if(document.getElementById('ch3').checked) count++;
+    document.getElementById('challengeScoreText').textContent = `CHALLENGE STATUS: ${count}/3 ACTIONS COMPLETED`;
+    if(count === 3) triggerToastNotification("Ecosystem baseline security badge unlocked!");
+  }
+
+  function handleSecureFormSubmit(e) {
+    e.preventDefault();
+    triggerToastNotification("Data package successfully passed to regional laboratory arrays.");
+    document.getElementById('cName').value = ''; document.getElementById('cEmail').value = ''; document.getElementById('cMsg').value = '';
+  }
+
+  // System Accordion Triggers
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const row = trigger.parentElement;
+      row.classList.toggle('active');
+    });
+  });
+
+  // Global Navigation Link Active Highlighting System via Intersection Observers
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let currentId = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if(window.scrollY >= top) currentId = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${currentId}`) link.classList.add('active');
+    });
+  });
+
+  // Global Search Engine Overlay Architecture
+  const searchOverlay = document.getElementById('search-overlay');
+  document.getElementById('searchOpenBtn').addEventListener('click', () => searchOverlay.style.display = 'flex');
+  document.getElementById('searchCloseBtn').addEventListener('click', () => searchOverlay.style.display = 'none');
+  
+  function initializeGlobalSearchEngine() {
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter') {
+        const query = searchBar.value.toLowerCase();
+        searchOverlay.style.display = 'none';
+        
+        let matchFound = false;
+        document.querySelectorAll('h2, h3, h4, p, .glass-card').forEach(el => {
+          if(!matchFound && el.textContent.toLowerCase().includes(query)) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            matchFound = true;
+            // Briefly flashing element profile highlight matching search query parameters
+            const origBorder = el.style.borderColor;
+            el.style.borderColor = 'var(--sky)';
+            setTimeout(() => el.style.borderColor = origBorder, 2000);
+          }
+        });
+        if(!matchFound) triggerToastNotification(`No configuration records matching "${query}" located inside system cache.`);
+        searchBar.value = '';
+      }
+    });
+  }
 </script>
+
 </body>
 </html>
